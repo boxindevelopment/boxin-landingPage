@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './Header';
+import Routes from './Routes';
 
-ReactDOM.render(<Header />, document.getElementById('root'));
+ReactDOM.render(<Routes />, document.getElementById('root'));
