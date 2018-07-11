@@ -28,7 +28,7 @@ class Pricing extends Component {
 				</header>
 				<section className="section text-center bg-gray py-7">
 					<div className="container">
-						<div class="row align-items-center h-100">
+						<div className="row align-items-center h-100">
 							<div className="col-lg-12">
 								<h1 className="">The most fare pricing plans ever.</h1>
 								<p className="lead">
@@ -36,10 +36,10 @@ class Pricing extends Component {
 								</p>
 								<div className="btn-group btn-group-toggle my-3 mb-8" data-toggle="buttons">
 									<label className="btn btn-round btn-outline-primary w-150">
-										<input type="radio" name="pricing" value="daily" autocomplete="off" /> Daily
+										<input type="radio" name="pricing" value="daily" autoComplete="off" /> Daily
 									</label>
 									<label className="btn btn-round btn-outline-primary w-150 active">
-										<input type="radio" name="pricing" value="Monthly" autocomplete="off" checked="" /> Monthly
+										<input type="radio" name="pricing" value="Monthly" autoComplete="off" checked="" /> Monthly
 									</label>
 								</div>
 							</div>

@@ -4,6 +4,7 @@ import StatictHome from '../component/Home';
 import Features from '../component/Features';
 import Pricing from '../component/Pricing';
 import Contact from '../component/Contact';
+import Locations from '../component/Locations';
 
 class Routes extends Component {
 	render() {
@@ -15,6 +16,7 @@ class Routes extends Component {
             		<Route path="/features" component={Features} />
             		<Route path="/pricing" component={Pricing} />
             		<Route path="/contact" component={Contact} />
+            		<Route path="/locations" component={Locations} />
 				</Switch>
 			</div>
 			</Router>

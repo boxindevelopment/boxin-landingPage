@@ -13,13 +13,13 @@ class Home extends Component {
 							<div className="col-md-5 mr-auto">
 								<h1 className="fw-600">Store your stuff better</h1>
 								<br />
-								<p claclassNamess="lead-2">Store your unused item on our space and have a tidier and spacier home. Find a storage near you.</p>
+								<p className="lead-2">Store your unused item on our space and have a tidier and spacier home. Find a storage near you.</p>
 								<p className="gap-xy">
 									<form className="input-round">
 										<div className="form-group input-group input-group-lg">
 											<input type="text" className="form-control" placeholder="e.g Jakarta Barat, Jakarta Utara, etc" />
 											<div className="input-group-append">
-												<button class="btn btn-primary" type="button">Search</button>
+												<button className="btn btn-primary" type="button">Search</button>
 											</div>
 										</div>
 									</form>
