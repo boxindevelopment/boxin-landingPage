@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 
 class Home extends Component {
 	render() {
 		return (
 			<div>
-				<Header />
 				<header className="header h-fullscreen">
 					<div className="container">
 						<div className="row align-items-center h-100">
