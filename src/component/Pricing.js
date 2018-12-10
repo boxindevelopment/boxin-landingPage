@@ -7,10 +7,10 @@ class Pricing extends Component {
 	render() {
 		return (
 			<div>
-				<header className="header h-fullscreen">
+				<header className="header h-fullscreen pb-6">
 					<div className="container">
-						<div className="row align-items-center h-100">
-							<div className="col-md-6 col-xl-5 mr-auto">
+						<div className="row reverse-mob align-items-center h-100">
+							<div className="col-md-6 col-xl-5 mr-auto mb-4">
 								<h1 className="fw-600">Best valued storage in town.</h1>
 								<br />
 								<p className="lead-2">Easy and cheap. Now you can decluter your home with ease.</p>
@@ -18,7 +18,7 @@ class Pricing extends Component {
 									<a href="" className="btn btn-round btn-primary w-200">Download</a>
 								</p>
 							</div>
-							<div className="col-md-4">
+							<div className="col-md-4 mb-4">
 								<img src="../../src/assets/img/boxin-img/8@3x.png" alt="..."/>
 							</div>
 						</div>
@@ -91,10 +91,10 @@ class Pricing extends Component {
 						</div>
 					</div>
 				</section>
-				<section className="section py-7">
+				<section className="section pb-6">
 					<div className="container">
 						<div className="row">
-							<div className="col-lg-5">
+							<div className="col-lg-5 text-c-responsive mb-4">
 								<h1 className="mb-3">Pick Up</h1>
 								<p className="lead">You get a free pick up 1 time per box. Additional charges may apply for other pick up or deliveries.</p>
 							</div>
@@ -102,7 +102,7 @@ class Pricing extends Component {
 								<a className="product-media" href="#">
 									<img src="../../src/assets/img/boxin-img/pickup@2x.png" />
 								</a>
-								<div className="product-detail mt-md-3">
+								<div className="product-detail mt-3">
 									<h6>
 										<a href="">Pick Up</a>
 									</h6>
@@ -113,7 +113,7 @@ class Pricing extends Component {
 								<a className="product-media" href="#">
 									<img src="../../src/assets/img/boxin-img/delivery@2x.png" />
 								</a>
-								<div className="product-detail mt-md-4">
+								<div className="product-detail mt-3">
 									<h6>
 										<a href="">Delivery</a>
 									</h6>
