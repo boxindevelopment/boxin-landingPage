@@ -6,7 +6,7 @@ class Contact extends Component {
 	render() {
 		return (
 			<div>
-				<Header />
+				<Header active="/contact" />
 				<header className="header h-fullscreen">
 					<div className="container">
 						<div className="row align-items-center h-100">

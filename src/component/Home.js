@@ -70,11 +70,11 @@ class Home extends Component {
 				<section className="section bg-gray">
 					<div className="container">
 						<div class="row align-items-center h-100">
-							<div className="col-lg-4">
+							<div className="col-lg-4 text-c-responsive">
 								<h3 className="">The most fare pricing plans ever.</h3>
 								<div className="btn-group btn-group-toggle my-3" data-toggle="buttons">
 									<label className="btn btn-round btn-outline-primary w-150">
-										<input type="radio" name="pricing" value="daily" autocomplete="off" /> Daily
+										<input type="radio" name="pricing" value="daily" autoComplete="off" /> Daily
 									</label>
 									<label className="btn btn-round btn-outline-primary w-150 active">
 										<input type="radio" name="pricing" value="Monthly" autocomplete="off" checked="" /> Monthly
@@ -209,7 +209,7 @@ class Home extends Component {
 								</div>
 							</div>
 							<div className="col-md-8">
-								<img style={{height: '100%', width: '100%'}} src="../../src/assets/img/boxin-img/keep-track-of-your-belongings@2x.png" />
+								<img className="img-responsive hg-responsive" src="../../src/assets/img/boxin-img/keep-track-of-your-belongings@2x.png" />
 							</div>
 						</div>
 					</div>
@@ -223,7 +223,7 @@ class Home extends Component {
 							</p>
 						</div>
 						<div className="row gap-y justify-content-md-center">
-							<div className="col-lg-3 col-xl-2">
+							<div className="col-6 col-sm-2 text-c-responsive">
 								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Jakarta</strong>
 								<div className="nav flex-column">
 									<a href="" className="nav-link">Jakarta Timur</a>
@@ -232,7 +232,7 @@ class Home extends Component {
 									<a href="" className="nav-link">Jakarta Utara</a>
 								</div>
 							</div>
-							<div className="col-lg-3 col-xl-2">
+							<div className="col-6 col-sm-2 text-c-responsive">
 								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Bandung</strong>
 								<div className="nav flex-column">
 									<a href="" className="nav-link">Jakarta Timur</a>
@@ -241,7 +241,7 @@ class Home extends Component {
 									<a href="" className="nav-link">Jakarta Utara</a>
 								</div>
 							</div>
-							<div className="col-lg-3 col-xl-2">
+							<div className="col-6 col-sm-2 text-c-responsive">
 								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Serpong</strong>
 								<div className="nav flex-column">
 									<a href="" className="nav-link">Jakarta Timur</a>
@@ -250,7 +250,7 @@ class Home extends Component {
 									<a href="" className="nav-link">Jakarta Utara</a>
 								</div>
 							</div>
-							<div className="col-lg-3 col-xl-2">
+							<div className="col-6 col-sm-2 text-c-responsive">
 								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Banten</strong>
 								<div className="nav flex-column">
 									<a href="" className="nav-link">Jakarta Timur</a>
