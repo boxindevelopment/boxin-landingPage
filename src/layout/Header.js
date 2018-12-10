@@ -20,8 +20,8 @@ class Header extends React.Component {
 								<Link to="/pricing" className="nav-link">Pricing</Link>
 								<Link to="/contact" className="nav-link">Contact</Link>
 							</nav>
+							<a className="nav-link btn btn-round btn-primary">Download Now</a>
 						</section>
-						<a className="btn btn-round btn-primary">Download Now</a>
 					</div>
 				</nav>
 			</div>
