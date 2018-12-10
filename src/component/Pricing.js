@@ -24,7 +24,7 @@ class Pricing extends Component {
 						</div>
 					</div>
 				</header>
-				<section className="section text-center bg-gray py-7">
+				<section className="section text-center bg-gray pt-6">
 					<div className="container">
 						<div className="row align-items-center h-100">
 							<div className="col-lg-12">
@@ -48,7 +48,7 @@ class Pricing extends Component {
 									<a className="product-media" href="#">
 										<img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
 									</a>
-									<div className="product-detail mt-md-5">
+									<div className="product-detail mt-4">
 										<h6>
 											<a href="">Rp. 10.000/day</a>
 										</h6>
@@ -63,7 +63,7 @@ class Pricing extends Component {
 									<a className="product-media" href="#">
 										<img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
 									</a>
-									<div className="product-detail mt-md-5">
+									<div className="product-detail mt-4">
 										<h6>
 											<a href="">Rp. 15.000/day</a>
 										</h6>
@@ -78,7 +78,7 @@ class Pricing extends Component {
 									<a className="product-media" href="#">
 										<img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
 									</a>
-									<div className="product-detail mt-md-5">
+									<div className="product-detail mt-4">
 										<h6>
 											<a href="">Rp. 20.000/day</a>
 										</h6>
@@ -102,7 +102,7 @@ class Pricing extends Component {
 								<a className="product-media" href="#">
 									<img src="../../src/assets/img/boxin-img/pickup@2x.png" />
 								</a>
-								<div className="product-detail mt-3">
+								<div className="product-detail mt-4">
 									<h6>
 										<a href="">Pick Up</a>
 									</h6>
@@ -113,7 +113,7 @@ class Pricing extends Component {
 								<a className="product-media" href="#">
 									<img src="../../src/assets/img/boxin-img/delivery@2x.png" />
 								</a>
-								<div className="product-detail mt-3">
+								<div className="product-detail mt-4">
 									<h6>
 										<a href="">Delivery</a>
 									</h6>

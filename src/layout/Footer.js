@@ -7,7 +7,7 @@ class Footer extends Component {
 			<div className="footer text-white bt-0 py-3" style={{backgroundImage: "linear-gradient(135deg, #4481eb 0%, #04befe 100%)"}}>
 				<div className="container pb-3">
 					<div className="row">
-						<div className="col-md-4">
+						<div className="col-md-4 col-md-4 text-c-responsive">
 							<font style={{fontFamily:"Pacifico", fontSize:"36px"}}>boxin</font>
 							<br />
 							<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>

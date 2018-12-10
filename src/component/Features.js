@@ -8,8 +8,8 @@ class Features extends Component {
 			<div>
 				<header className="header h-fullscreen">
 					<div className="container">
-						<div className="row align-items-center h-100">
-							<div className="col-md-6 mr-auto">
+						<div className="row reverse-mob align-items-center h-100">
+							<div className="col-md-6 mr-auto mb-4">
 								<h1 className="fw-600">Full-Service Storage. Seriously.</h1>
 								<br />
 								<p className="lead-2">From picking up your item, storing it, keeping track, till delivering your item safe and sound.</p>
@@ -17,13 +17,13 @@ class Features extends Component {
 									<a href="" className="btn btn-round btn-primary w-200">Download</a>
 								</p>
 							</div>
-							<div className="col-md-4">
+							<div className="col-md-4 mb-4">
 								<img src="../../src/assets/img/boxin-img/pickup-delivery@3x.jpg" alt="..."/>
 							</div>
 						</div>
 					</div>
 				</header>
-				<section className="section text-center bg-gray py-7">
+				<section className="section text-center bg-gray pt-6">
 					<div className="container">
 						<div className="row">
 							<div className="col-lg-3 col-xl-3">

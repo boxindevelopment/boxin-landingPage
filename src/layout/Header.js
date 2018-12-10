@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 
 class Header extends React.Component {
 	render() {
+		console.log(this.props.history)
 		return (
 			<div>
 				<nav className="navbar navbar-expand-lg navbar-dark" data-navbar="smart">
