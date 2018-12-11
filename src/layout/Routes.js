@@ -8,6 +8,7 @@ import Locations from '../component/Locations';
 import DetailLocations from '../component/DetailLocations';
 import TermCondition from '../component/TermCondition';
 import StorageRules from '../component/StorageRules';
+import Faq from '../component/Faq';
 import Header from './Header';
 
 const NotFound = () => {
@@ -37,6 +38,7 @@ class Routes extends Component {
             		<Route path="/detail-locations" component={DetailLocations} />
 					<Route path="/term-conditions" component={TermCondition} />
 					<Route path="/storage-rules" component={StorageRules} />
+					<Route path="/faq" component={Faq} />
 					<Route path="*" component={NotFound} />				
 				</Switch>
 			</div>
