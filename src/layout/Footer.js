@@ -9,11 +9,11 @@ class Footer extends Component {
 					<div className="row">
 						<div className="col-md-4 col-md-4 text-c-responsive">
 							{/*<font style={{fontFamily:"Pacifico", fontSize:"36px"}}>boxin</font>*/}
-							<img className="logo-dark img-logo" src="../../src/assets/img/logo/box-in-1-color.png" alt="logo" />
+							<img className="logo-dark img-logo" src="../../src/assets/img/logo/box-in-1-color(white).png" alt="logo" />
 							<br />
-							<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
+							<small>Seize your life - we solve your space matter.</small>
 						</div>
-						<div className="col-md-3 text-center text-md-center mt-5 mt-md-8">
+						<div className="col-md-4 text-center text-md-center mt-5 mt-md-8">
 							<div className="social social-bg-dark">
 								<a href="#" className="social-facebook">
 									<i className="fa fa-facebook"></i>
@@ -26,26 +26,19 @@ class Footer extends Component {
 								</a>
 							</div>
 						</div>
-						<div className="col-md-5 mt-5 mt-md-6">
+						<div className="col-md-4 mt-5 mt-md-6 text-c-responsive">
 							<div className="row">
-								<div className="col-4 col-md-5 col-xl-4">
+								<div className="col-6 col-md-6 col-xl-6">
 									<div className="nav flex-column">
-										<a href="/contact" className="nav-link">About</a>
+										<a href="/pricing" className="nav-link">Pricing</a>
 										<a href="/locations" className="nav-link">Locations</a>										
 										<a href="/features" className="nav-link">Features</a>
 									</div>
 								</div>
-								<div className="col-4 col-md-5 col-xl-4">
+								<div className="col-6 col-md-6 col-xl-6 text-c-responsive">
 									<div className="nav flex-column">
-										<a href="/pricing" className="nav-link">Pricing</a>										
-										<a href="/" className="nav-link">FAQ</a>
 										<a href="/storage-rules" className="nav-link">Storage Rules</a>
-									</div>
-								</div>
-								<div className="col-4 col-md-5 col-xl-4">
-									<div className="nav flex-column">
-										<a href="/term-conditions" className="nav-link">Term</a>
-										<a href="" className="nav-link">Privacy</a>
+										<a href="/term-conditions" className="nav-link">T&C</a>
 									</div>
 								</div>
 							</div>
