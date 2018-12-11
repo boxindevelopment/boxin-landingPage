@@ -10,8 +10,8 @@ class Header extends React.Component {
 					<div className="container">
 						<div className="navbar-left">
 							<button className="navbar-toggler" type="button">☰</button>
-							<a className="navbar-brand" href="/">
-								<img className="logo-dark" src="../../src/assets/img/logo/boxin-logo@3x.png" alt="logo" />
+							<a className="navbar-brand nav-mob" href="/">
+								<img className="logo-dark img-logo" src="../../src/assets/img/logo/box-in-1-color.png" alt="logo" />
 							</a>
 						</div>
 						<section className="navbar-mobile">
