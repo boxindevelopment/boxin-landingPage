@@ -10,7 +10,7 @@ class Home extends Component {
                     <section className="text-white py-7" style={{backgroundColor:"#50a1ff"}}>
                         <div className="container">
                             <div className="text-center">
-                                <h2 className="mb-2">Terms & Condition</h2>
+                                <h2 className="mb-2">FAQ</h2>
                             </div>
                         </div>
                     </section>
@@ -20,22 +20,37 @@ class Home extends Component {
 					<div className="container">
                         <div className="pb-2">
                             <p>
-                                Diharapkan untuk membaca syarat dan ketentuan yang tertera dibawah ini dengan baik sebelum memesan atau menggunakan layanan dari situs dan atau mobile apps kami.
+                                Apakah barang saya aman bersama Box-in?
+                                <li>
+                                    Barang Anda yang tersimpan di area Box-in terjaga ketat dengan diawasi dengan tenaga keamanan dan dalam pemantauan CCTV selama 24 jam.
+                                </li>
                             </p>
                             <p>
-                                PT. Layanan Simpan Mandiri ("Box-in" / kami) adalah sebuah perseroan terbatas yang didirikan berdasarkan hukum Indonesia, yang berdomisili di komplek pergudangan central cakung blok F no 28 Jalan Cakung Cilincing, Jakarta Timur yang merupakan pemilik dan operator dari www.box-in.com dan mobile apps (“Box-in”). Box-in  sebagai penyedia Platform sarana penyewaan tempat berupa kotak/box atau tempat dengan luasan tertentu melalui situs www.box-in.com dan sebuah domain internet yang didaftarkan atas nama Box-in dan/atau Aplikasi iOS dan Android.
+                                Bagaimana bila barang saya hilang?
+                                <li>
+                                    'Diganti dengan ‘bagaimana bila kotak saya hilang?' Jika kotak Anda terbukti rusak atau hilang yang diakibatkan oleh kelalaian Box-in, maka Box-in akan memberikan bantuan dalam bentuk nominal Rupiah maksimal 5X masa sewa bulanan sesuai produk yang dipilih.
+                                </li>
                             </p>
                             <p>
-                                Untuk menggunakan layanan kami, anda harus terlebih dahulu terdaftar sebagai Pengguna kami. Dengan tetap mengakses Situs ini melalui telepon atau aplikasi telepon genggam kami, Anda setuju untuk terikat dengan Syarat dan Ketentuan ini. 
+                                Bagaimana bila saya lupa mengambil barang setelah masa penyimpanan berakhir?
+                                <li>
+                                    Aplikasi Box-in akan memberikan notification untuk mengingatkan Anda sebelum masa sewa berakhir dan tim Box-in juga akan membantu dalam melakukan pengecekan secara berkala dan menjalin komunikasi dengan Anda.
+                                </li>
+                            </p>
+                            <p>
+                                Apakah saya perlu kesana untuk mengambil barang?
+                                <li>
+                                    Box-in memberikan kemudahan bagi Anda untuk melakukan proses penukaran/pengambilan/penyimpanan barang-barang Anda yaitu dengan datang langsung atau jika memilih smallbox maka perencanaan pengantaran dapat dilakukan melalui aplikasi.
+                                </li>
+                            </p>
+                            <p>
+                                Bagaimana bila saya lupa password akun saya?
+                                <li>
+                                    Anda dapat menjalan proses untuk mereset password Anda melalui aplikasi Box-in. Setelah dilakukan konfirmasi untuk memastikan bahwa Anda adalah pihak yang berhak, maka proses pembuatan password baru akan dilakukan.
+                                </li>
                             </p>
                         </div>
-                        <div className="pb-4">
-                            <p style={{ fontWeight: 'bold' }}>Hal-Hal Umum</p>
-                            <ul>
-                                <li>PT. Layanan Simpan Mandiri adalah suatu perseroan yang didirikan berdasarkan hukum Negara Republik Indonesia.</li>
-                                <li>Layanan yang tersedia dalam Situs dan / atau Aplikasi ini merupakan aplikasi perangkat lunak yang berfungsi sebagai sarana untuk menghubungkan layanan penyelenggaraan penyewaan tempat berupa kotak atau tempat dengan luasan tertentu pada tempat yang dimiliki atau dikelola oleh Box-in.</li>
-                            </ul>
-                        </div>
+                    </div>
 				</section>
                 <SubFooter />
 				<Footer />
