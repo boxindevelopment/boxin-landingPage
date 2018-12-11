@@ -19,6 +19,17 @@
     width: auto;
 }
 
+.img-logo {
+    width: 75px;
+    height: auto;
+}
+
+.separator-sp {
+    span {
+        color: #50a1ff;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .hg-responsive {
         height: auto;

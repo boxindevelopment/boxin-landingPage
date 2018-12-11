@@ -25,7 +25,7 @@ class Locations extends Component {
 						<div className="row">
 							<div className="col-lg-12 col-xl-12">
 								<h1>Our Storage Locations</h1>
-								<p className="lead">See is your area listed for our servuice</p>
+								<p className="lead">See is your area listed for our service</p>
 							</div>
 						</div>
 						<div className="row gap-y justify-content-md-center">
