@@ -8,7 +8,8 @@ class Footer extends Component {
 				<div className="container pb-3">
 					<div className="row">
 						<div className="col-md-4 col-md-4 text-c-responsive">
-							<font style={{fontFamily:"Pacifico", fontSize:"36px"}}>boxin</font>
+							{/*<font style={{fontFamily:"Pacifico", fontSize:"36px"}}>boxin</font>*/}
+							<img className="logo-dark img-logo" src="../../src/assets/img/logo/box-in-1-color.png" alt="logo" />
 							<br />
 							<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
 						</div>

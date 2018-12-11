@@ -1,10 +1,52 @@
 import React, { Component } from 'react';
 import Footer from '../layout/Footer';
 import SubFooter from '../layout/SubFooter';
+import axios from 'axios';
+import CurrencyFormat from 'react-currency-format';
+import { BASE_API } from '../config/url';
 
 class Pricing extends Component {
-	
+	constructor(props) {
+		super(props)
+		this.state = {
+			box: [],
+			fee: []
+		}
+	}
+
+	boxList() {
+		axios.get(BASE_API + '/box/list/3')
+		.then((res) => {
+			let data = res.data.data
+			this.setState({
+				box: data
+			})
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	}
+
+	feeList() {
+		axios.get(BASE_API + '/product/delivery-fee')
+		.then((res) => {
+			let data = res.data.data
+			this.setState({
+				fee: data
+			})
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	}
+
+	componentDidMount() {
+		this.boxList()
+		this.feeList()
+	}
+
 	render() {
+		const { box, fee } = this.state	
 		return (
 			<div>
 				<header className="header h-fullscreen pb-6">
@@ -43,7 +85,7 @@ class Pricing extends Component {
 							</div>
 						</div>
 						<div className="row justify-content-md-center">
-							<div className="col-md-6 col-xl-3 mb-6">
+							{/*<div className="col-md-6 col-xl-3 mb-6">
 								<div className="">
 									<a className="product-media" href="#">
 										<img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
@@ -57,23 +99,31 @@ class Pricing extends Component {
 										<a href="" className="btn btn-round btn-outline-primary">Book Now</a>
 									</div>
 								</div>
-							</div>
-							<div className="col-md-6 col-xl-3 mb-6">
-								<div className="">
-									<a className="product-media" href="#">
-										<img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
-									</a>
-									<div className="product-detail mt-4">
-										<h6>
-											<a href="">Rp. 15.000/day</a>
-										</h6>
-										<small className="text-lighter">Medium Box ( 100 x 120 cm )</small>
-										<br />
-										<a href="" className="btn btn-round btn-outline-primary">Book Now </a>
-									</div>
-								</div>
-							</div>
-							<div className="col-md-6 col-xl-3 mb-6">
+							</div>*/}
+							{
+								box.map((key, i) => {
+									return(
+										<div className="col-md-6 col-xl-3 mb-6">
+											<div className="">
+												<a className="product-media" href="#">
+													<img className="img-responsive" src={key.types_of_size.image} />
+												</a>
+												<div className="product-detail mt-4">
+													<h6>
+														<a className="separator-sp" href=""><CurrencyFormat displayType={'text'} thousandSeparator={true} prefix={'Rp.'} value={key.price} /><span> / {key.type_duration.name}</span></a>
+													</h6>
+													<div className="pb-3">
+														<small className="text-lighter">{key.types_of_size.name}</small>
+													</div>
+													<a href="" className="btn btn-round btn-outline-primary">Book Now </a>
+												</div>
+											</div>
+										</div>
+									)
+								})
+							}
+							
+							{/*<div className="col-md-6 col-xl-3 mb-6">
 								<div className="">
 									<a className="product-media" href="#">
 										<img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
@@ -87,7 +137,7 @@ class Pricing extends Component {
 										<a href="" className="btn btn-round btn-outline-primary">Book Now</a>
 									</div>
 								</div>
-							</div>
+							</div>*/}
 						</div>
 					</div>
 				</section>
@@ -117,7 +167,7 @@ class Pricing extends Component {
 									<h6>
 										<a href="">Delivery</a>
 									</h6>
-									<p className="text-lighter">Rp 20.000/jam</p>
+									<p className="text-lighter"><CurrencyFormat displayType={'text'} thousandSeparator={true} prefix={'Rp.'} value={fee.fee} /><span> / Flat fee</span></p>
 								</div>
 							</div>
 						</div>

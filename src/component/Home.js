@@ -83,7 +83,7 @@ class Home extends Component {
 								<p className="lead mt-5">
 									Our prices are very easy to understand. There&apos;s not any extra or hidden fee. You just pay what is listed here.
 									<p className="small-3 fw-400">
-										<a href="#">See all pricing &gt;</a>
+										<a href="/pricing">See all pricing &gt;</a>
 									</p>
 								</p>
 							</div>

@@ -7,7 +7,7 @@ class Contact extends Component {
 	render() {
 		return (
 			<div>
-				<Header active="/contact" />
+				<Header />
 				<header className="header">
 					<div className="container">
 						<div className="row reverse-mob align-items-center h-100">
