@@ -23,16 +23,16 @@ class Features extends Component {
 						</div>
 					</div>
 				</header>
-				<section className="section text-center bg-gray pt-6">
+				<section className="section text-center bg-gray py-7">
 					<div className="container">
 						<div className="row">
 							<div className="col-lg-3 col-xl-3">
 								<img src="../../src/assets/img/boxin-img/pickup-delivery@2x.png" />
 							</div>
 							<div className="col-lg-9 col-xl-9 text-left">
-								<h2>Pick up &amp; Delivery ( working hours )</h2>
+								<h2>Gratis pemakaian kotak Box-in.</h2>
 								<p className="lead-2">
-								We deliver your box to you and pick it up from you also to store it on the storage of your choice. We also delivery your box back to you ( additional charges may apply ).
+									Anda tidak perlu pusing memikirkan dan menyiapkan kardus untuk penyimpanan dipaket smallbox kami karena Paket penyewaan sudah termasuk pemakaian/penyewaan kotak Box-in dengan ukuran 60cmx40cmx37cm.
 								</p>
 							</div>
 						</div>
@@ -42,9 +42,9 @@ class Features extends Component {
 					<div className="container">
 						<div className="row">
 							<div className="col-lg-9 col-xl-9 text-right">
-								<h2>Keep Track of your Belongings ( 24/7 )</h2>
+								<h2>Harga yang flexible</h2>
 								<p className="lead-2">
-								Manage all of your stuff in storage, easily schedule appointments and keep track of them, tip your team, and more.
+									Dengan pilihan waktu yang beragam, maka Anda memperoleh keuntungan lebih dalam mendapatkan harga yang paling sesuai dan discount yang lebih besar.
 								</p>
 							</div>
 							<div className="col-lg-3 col-xl-3">
@@ -60,9 +60,9 @@ class Features extends Component {
 								<img src="../../src/assets/img/boxin-img/security-care@2x.png" />
 							</div>
 							<div className="col-lg-9 col-xl-9 text-left">
-								<h2>Security &amp; Care</h2>
+								<h2>Pengiriman yang terjamin</h2>
 								<p className="lead-2">
-								We value your stuff as if it’s our own. Our facilities have got it all: cctv, alarms, and 24-hour security.
+									Khusus smallbox, bahkan Anda tidak perlu repot jika ada barang yang ingin ditukar, ditambah, atau diambil. Tinggal lakukan penentuan jadwal pengiriman dan pemilihan smallbox, maka Anda seakan memiliki ruang/kotak penyimpanan yang banyak dirumah Anda.
 								</p>
 							</div>
 						</div>
@@ -72,9 +72,9 @@ class Features extends Component {
 					<div className="container">
 						<div className="row">
 							<div className="col-lg-9 col-xl-9 text-right">
-								<h2>Pay what you see, no hidden cost</h2>
+								<h2>Lihat barang Anda</h2>
 								<p className="lead-2">
-								Our goal is to always deliver the best customer service and support experience. The boxin team is here for you 12 hours a day.
+									Barang Anda yang tersimpan dapat dilihat sewaktu-waktu dan Anda dapat mengelola nya dengan mudah dengan aplikasi Box-in. Selain menyelesaikan masalah tempat penyimpanan, Box-in juga membantu Anda dalam mengelola dan mendaftar barang-barang yang disimpan. Anda tidak pelu pusing lagi mencari barang yang Anda ingini/butuhkan.
 								</p>
 							</div>
 							<div className="col-lg-3 col-xl-3">
@@ -90,9 +90,9 @@ class Features extends Component {
 								<img src="../../src/assets/img/boxin-img/best-cs@2x.png" />
 							</div>
 							<div className="col-lg-9 col-xl-9 text-left">
-								<h2>The best customer services</h2>
+								<h2>Penjagaan dan Keamanan</h2>
 								<p className="lead-2">
-								Our goal is to always deliver the best customer service and support experience. The boxin team is here for you 12 hours a day.
+									Anda tidak perlu khawatir karena barang Anda dijaga oleh keamanan kami dan dipantau dengan CCTV selama 24 jam. Lokasi kami juga dilakukan pest-control dan pemantauan terhadap suhu ruangan untuk memastikan barang Anda terjaga dengan baik.
 								</p>
 							</div>
 						</div>
