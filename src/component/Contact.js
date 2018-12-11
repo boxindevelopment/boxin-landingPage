@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
 import SubFooter from '../layout/SubFooter';
+
 class Contact extends Component {
 	render() {
 		return (
 			<div>
-				<Header />
-				<header className="header h-fullscreen">
+				<Header active="/contact" />
+				<header className="header">
 					<div className="container">
-						<div className="row align-items-center h-100">
+						<div className="row reverse-mob align-items-center h-100">
 							<div className="col-lg-6 mr-auto">
 								<h1 className="fw-600">Contact Us</h1>
 								<p className="lead-2">Don’t hesitate to ask us anything! we are here to help you.</p>

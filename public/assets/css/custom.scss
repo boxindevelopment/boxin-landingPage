@@ -1,0 +1,36 @@
+// Custom
+.no-rap {
+    width: 100% !important;
+    white-space: normal;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.img-scale-down {
+    width: 100%;
+    object-fit: scale-down;
+}
+
+.hg-responsive {
+    height: 100%;
+    width: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .hg-responsive {
+        height: auto;
+    }
+
+    .text-c-responsive {
+        text-align: center;
+    } 
+
+    .reverse-mob {
+        -webkit-box-orient: vertical !important;
+        -webkit-box-direction: reverse !important;
+        flex-direction: column-reverse !important
+    }
+}

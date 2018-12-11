@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 class Footer extends Component {
-	
 	render() {
 		return (
 			<div className="footer text-white bt-0 py-3" style={{backgroundImage: "linear-gradient(135deg, #4481eb 0%, #04befe 100%)"}}>
-				<div className="container">
+				<div className="container pb-3">
 					<div className="row">
-						<div className="col-md-4">
+						<div className="col-md-4 col-md-4 text-c-responsive">
 							<font style={{fontFamily:"Pacifico", fontSize:"36px"}}>boxin</font>
 							<br />
 							<small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
@@ -28,21 +27,21 @@ class Footer extends Component {
 						</div>
 						<div className="col-md-5 mt-5 mt-md-6">
 							<div className="row">
-								<div className="col-5 col-md-5 col-xl-4">
+								<div className="col-4 col-md-5 col-xl-4">
 									<div className="nav flex-column">
 										<a href="" className="nav-link">About</a>
 										<Link to="/locations" className="nav-link">Locations</Link>
 										<a href="" className="nav-link">Features</a>
 									</div>
 								</div>
-								<div className="col-5 col-md-5 col-xl-4">
+								<div className="col-4 col-md-5 col-xl-4">
 									<div className="nav flex-column">
 										<a href="" className="nav-link">Pricing</a>
 										<a href="" className="nav-link">FAQ</a>
 										<a href="" className="nav-link">Storage Rules</a>
 									</div>
 								</div>
-								<div className="col-5 col-md-5 col-xl-4">
+								<div className="col-4 col-md-5 col-xl-4">
 									<div className="nav flex-column">
 										<a href="" className="nav-link">Term</a>
 										<a href="" className="nav-link">Privacy</a>

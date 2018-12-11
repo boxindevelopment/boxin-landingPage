@@ -7,18 +7,18 @@ class SubFooter extends Component {
 					<div className="container">
 						<div className="row">
 							<div className="col-12 col-md-12">
-								<div className="row justify-content-md-center">
-									<div className="col-lg-6 col-xl-4 mb-8 mt-md-8">
+								<div className="row reverse-mob justify-content-md-center">
+									<div className="col-lg-6 col-xl-4 mb-8 mt-8">
 										<h2 className="mb-2">Get started now!</h2>
 										<p className="lead-2 mb-3">
 											Manage all of your stuff in storage, easily schedule appointments and keep track of them, tip your team, and more.
 										</p>
-										<div className="row">
-											<div className="col-md-5">
-												<a href=""><img src="../../src/assets/img/app/badge-google.png" /></a>
+										<div class="d-flex">
+											<div className="col-md-5 mb-5 pl-0">
+												<a href=""><img className="img-scale-down" src="../../src/assets/img/app/badge-google.png" /></a>
 											</div>
-											<div className="col-md-5">
-											<a href=""><img src="../../src/assets/img/app/badge-apple.png" /></a>
+											<div className="col-md-5 mb-5 pr-0">
+											<a href=""><img className="img-scale-down" src="../../src/assets/img/app/badge-apple.png" /></a>
 											</div>
 										</div>
 									</div>

@@ -70,11 +70,11 @@ class Home extends Component {
 				<section className="section bg-gray">
 					<div className="container">
 						<div class="row align-items-center h-100">
-							<div className="col-lg-4">
+							<div className="col-lg-4 text-c-responsive">
 								<h3 className="">The most fare pricing plans ever.</h3>
 								<div className="btn-group btn-group-toggle my-3" data-toggle="buttons">
 									<label className="btn btn-round btn-outline-primary w-150">
-										<input type="radio" name="pricing" value="daily" autocomplete="off" /> Daily
+										<input type="radio" name="pricing" value="daily" autoComplete="off" /> Daily
 									</label>
 									<label className="btn btn-round btn-outline-primary w-150 active">
 										<input type="radio" name="pricing" value="Monthly" autocomplete="off" checked="" /> Monthly
@@ -89,10 +89,10 @@ class Home extends Component {
 							</div>
 							<div className="col-lg-8">
 								<div className="row">
-									<div className="col-md-6 col-xl-4">
+									<div className="col-md-6 col-xl-4 mb-4">
 										<div className="product-3">
 											<a className="product-media" href="#">
-												<img src="../../src/assets/img/boxin-img/box-kecil@3x.png" />
+												<img className="img-responsive" src="../../src/assets/img/boxin-img/box-kecil@3x.png" />
 											</a>
 											<div className="product-detail">
 												<h6>
@@ -104,10 +104,10 @@ class Home extends Component {
 											</div>
 										</div>
 									</div>
-									<div className="col-md-6 col-xl-4">
+									<div className="col-md-6 col-xl-4 mb-4">
 										<div className="product-3">
 											<a className="product-media" href="#">
-												<img src="../../src/assets/img/boxin-img/box-kecil@3x.png" />
+												<img className="img-responsive" src="../../src/assets/img/boxin-img/box-kecil@3x.png" />
 											</a>
 											<div className="product-detail">
 												<h6>
@@ -119,10 +119,10 @@ class Home extends Component {
 											</div>
 										</div>
 									</div>
-									<div className="col-md-6 col-xl-4">
+									<div className="col-md-6 col-xl-4 mb-4">
 										<div className="product-3">
 											<a className="product-media" href="#">
-												<img src="../../src/assets/img/boxin-img/box-kecil@3x.png" />
+												<img className="img-responsive" src="../../src/assets/img/boxin-img/box-kecil@3x.png" />
 											</a>
 											<div className="product-detail">
 												<h6>
@@ -152,31 +152,31 @@ class Home extends Component {
 							<div className="col-md-9">
 								<div className="row mb-3">
 									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400">Apakah barang saya aman bersama boxin?</a>
+										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Apakah barang saya aman bersama Boxin?</a>
 									</div>
 									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400">Bagaimana bila barang saya rusak?</a>
-									</div>
-								</div>
-								<div className="row mb-3">
-									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400">Bagaimana bila saya barang saya hilang?</a>
-									</div>
-									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400">Saya Lupa password akun?</a>
+										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila barang saya hilang?</a>
 									</div>
 								</div>
 								<div className="row mb-3">
 									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400">Bagaimana bila saya lupa mengambil barang<br />setelahmasa berlaku berakhir?</a>
+										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila saya lupa mengambil barang setelah masa penyimpanan berakhir?</a>
 									</div>
 									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400">Bagaimana bila saya tidak ada di rumah<br />saatbarang diambil?</a>
+										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Apakah saya perlu kesana untuk mengambil barang?</a>
 									</div>
 								</div>
 								<div className="row mb-3">
 									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400">Apakah saya perlu ke sana untuk<br />mengambil barang?</a>
+										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila barang saya rusak?</a>
+									</div>
+									<div className="col-md-6 mb-3">
+										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila saya lupa password akun saya?</a>
+									</div>
+								</div>
+								<div className="row mb-3">
+									<div className="col-md-6 mb-3">
+										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila saya tidak ada di rumah saat barang diambil?</a>
 									</div>
 									<div className="col-md-6 text-center">
 										<a href=""><strong>See all FAQ &gt;</strong></a>
@@ -199,17 +199,17 @@ class Home extends Component {
 									Manage all of your stuff in storage, easily schedule appointments and keep track of them, tip your team, and more.
 									<br />
 								</p>
-								<div class="row">
-									<div className="col-md-5">
-										<a href=""><img src="../../src/assets/img/app/badge-google.png" /></a>
+								<div class="d-flex">
+									<div className="col-md-5 mb-5 pl-0">
+										<a href=""><img className="img-scale-down" src="../../src/assets/img/app/badge-google.png" /></a>
 									</div>
-									<div className="col-md-5">
-									<a href=""><img src="../../src/assets/img/app/badge-apple.png" /></a>
+									<div className="col-md-5 mb-5 pr-0">
+									<a href=""><img className="img-scale-down" src="../../src/assets/img/app/badge-apple.png" /></a>
 									</div>
 								</div>
 							</div>
 							<div className="col-md-8">
-								<img src="../../src/assets/img/boxin-img/keep-track-of-your-belongings@2x.png" />
+								<img className="img-responsive hg-responsive" src="../../src/assets/img/boxin-img/keep-track-of-your-belongings@2x.png" />
 							</div>
 						</div>
 					</div>
@@ -223,7 +223,7 @@ class Home extends Component {
 							</p>
 						</div>
 						<div className="row gap-y justify-content-md-center">
-							<div className="col-lg-3 col-xl-2">
+							<div className="col-6 col-sm-2 text-c-responsive">
 								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Jakarta</strong>
 								<div className="nav flex-column">
 									<a href="" className="nav-link">Jakarta Timur</a>
@@ -232,7 +232,7 @@ class Home extends Component {
 									<a href="" className="nav-link">Jakarta Utara</a>
 								</div>
 							</div>
-							<div className="col-lg-3 col-xl-2">
+							<div className="col-6 col-sm-2 text-c-responsive">
 								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Bandung</strong>
 								<div className="nav flex-column">
 									<a href="" className="nav-link">Jakarta Timur</a>
@@ -241,7 +241,7 @@ class Home extends Component {
 									<a href="" className="nav-link">Jakarta Utara</a>
 								</div>
 							</div>
-							<div className="col-lg-3 col-xl-2">
+							<div className="col-6 col-sm-2 text-c-responsive">
 								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Serpong</strong>
 								<div className="nav flex-column">
 									<a href="" className="nav-link">Jakarta Timur</a>
@@ -250,7 +250,7 @@ class Home extends Component {
 									<a href="" className="nav-link">Jakarta Utara</a>
 								</div>
 							</div>
-							<div className="col-lg-3 col-xl-2">
+							<div className="col-6 col-sm-2 text-c-responsive">
 								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Banten</strong>
 								<div className="nav flex-column">
 									<a href="" className="nav-link">Jakarta Timur</a>
