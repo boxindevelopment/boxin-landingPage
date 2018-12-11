@@ -39,6 +39,7 @@ class Footer extends Component {
 									<div className="nav flex-column">
 										<a href="/storage-rules" className="nav-link">Storage Rules</a>
 										<a href="/term-conditions" className="nav-link">T&C</a>
+										<a href="/faq" className="nav-link">FAQ</a>
 									</div>
 								</div>
 							</div>
