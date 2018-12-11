@@ -149,7 +149,7 @@ class Home extends Component {
                                 <ul>
                                     <li>Barang yang dilarang oleh pihak berwajib untuk dimiliki atau diedarkan.</li>
                                     <li>Binatang peliharaan.</li>
-                                <ul>
+                                </ul>
                                 <li>Para Mitra Box-in adalah pengemudi yang sudah mendapatkan pengarahan untuk mengendarai kendaraannya dengan cara yang aman. Box-in tidak bertanggung jawab secara langsung untuk kecelakaan yang melibatkan Mitra Porter baik kerusakan terhadap kendaraan maupun luka badan yang disebabkan oleh kecelakaan tersebut. Tanggung jawab atas seluruh biaya serta tuntutan yang mungkin timbul atas kejadian tersebut akan menjadi tanggung jawab pribadi Mitra Box-in. Jika ada informasi yang dapat membantu untuk proses investigasi seperti nomor plat motor, maka Porter hanya dapat membantu sebagai mediator dalam mempertemukan kedua pihak untuk mencari penyelesaian masalah tersebut.</li>
                             </ul>
                         </div>

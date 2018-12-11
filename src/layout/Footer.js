@@ -29,21 +29,21 @@ class Footer extends Component {
 							<div className="row">
 								<div className="col-4 col-md-5 col-xl-4">
 									<div className="nav flex-column">
-										<a href="" className="nav-link">About</a>
-										<Link to="/locations" className="nav-link">Locations</Link>
-										<a href="" className="nav-link">Features</a>
+										<a href="/contact" className="nav-link">About</a>
+										<a href="/locations" className="nav-link">Locations</a>										
+										<a href="/features" className="nav-link">Features</a>
 									</div>
 								</div>
 								<div className="col-4 col-md-5 col-xl-4">
 									<div className="nav flex-column">
-										<a href="" className="nav-link">Pricing</a>
-										<a href="" className="nav-link">FAQ</a>
-										<a href="" className="nav-link">Storage Rules</a>
+										<a href="/pricing" className="nav-link">Pricing</a>										
+										<a href="/" className="nav-link">FAQ</a>
+										<a href="/storage-rules" className="nav-link">Storage Rules</a>
 									</div>
 								</div>
 								<div className="col-4 col-md-5 col-xl-4">
 									<div className="nav flex-column">
-										<a href="" className="nav-link">Term</a>
+										<a href="/term-conditions" className="nav-link">Term</a>
 										<a href="" className="nav-link">Privacy</a>
 									</div>
 								</div>
