@@ -1,8 +1,35 @@
 import React, { Component } from 'react';
 import Footer from '../layout/Footer';
+import axios from 'axios';
+import { BASE_API_INFRASTRUCTURE } from '../config/url';
 
 class Home extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			city: []
+		}
+	}
+
+	cityList() {
+		axios.get(BASE_API_INFRASTRUCTURE + '/city')
+		.then((res) => {
+			let data = res.data.data
+			this.setState({
+				city: data
+			})
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+	}
+
+	componentDidMount() {
+		this.cityList()
+	}
+
 	render() {
+		let { city } = this.state
 		return (
 			<div>
 				<header className="header h-fullscreen">
@@ -179,7 +206,7 @@ class Home extends Component {
 										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila saya tidak ada di rumah saat barang diambil?</a>
 									</div>
 									<div className="col-md-6 text-center">
-										<a href=""><strong>See all FAQ &gt;</strong></a>
+										<a href="/faq"><strong>See all FAQ &gt;</strong></a>
 									</div>
 								</div>
 							</div>
@@ -223,7 +250,17 @@ class Home extends Component {
 							</p>
 						</div>
 						<div className="row gap-y justify-content-md-center">
-							<div className="col-6 col-sm-2 text-c-responsive">
+							{
+								city.map((key) => {
+									return(
+										<div className="col-6 col-sm-2 text-c-responsive">
+											<img src="../../src/assets/img/app/pin@2x.png" /> <strong>{key.name}</strong>
+										</div>
+									)
+								})
+							}
+							
+							{/*<div className="col-6 col-sm-2 text-c-responsive">
 								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Jakarta</strong>
 								<div className="nav flex-column">
 									<a href="" className="nav-link">Jakarta Timur</a>
@@ -258,7 +295,7 @@ class Home extends Component {
 									<a href="" className="nav-link">Jakarta Selatan</a>
 									<a href="" className="nav-link">Jakarta Utara</a>
 								</div>
-							</div>
+							</div>*/}
 						</div>
 					</div>
 				</section>
