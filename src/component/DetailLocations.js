@@ -15,7 +15,7 @@ class DetailLocations extends Component {
 				<header className="header h-fullscreen">
 					<div className="container">
 						<div className="row">
-							<div className="col-lg-5 col-xl-5">
+							<div className="col-lg-5 col-xl-5 mb-4">
 								{/* <div className="h-700" data-provide="map" data-lat="-6.215393" data-lng="106.846671" data-zoom="11" data-markers="[-6.215393, 106.846671, 'Tebet Jkt', '../../src/assets/img/app/pin@2x.png']"> </div>*/}
 								<Map center={location} />
 							</div>
