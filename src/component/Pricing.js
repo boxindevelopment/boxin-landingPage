@@ -106,7 +106,7 @@ class Pricing extends Component {
 									<h6>
 										<a href="">Pick Up</a>
 									</h6>
-									<p className="text-lighter">Rp 15.000/jam</p>
+									<p className="text-lighter">Free</p>
 								</div>
 							</div>
 							<div className="col-lg-5 col-xl-3 text-center mb-5">
