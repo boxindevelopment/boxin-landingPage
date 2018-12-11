@@ -3,10 +3,10 @@ const path = require('path');
 const port = process.env.port || 8080;
 const app = express();
 
-let root = path.join(__dirname, '..', 'boxin-front/dist/')
+let root = path.join(__dirname, './dist')
 
 app.use(express.static(root))
-app.use('/public', express.static('public'))
+app.use(express.static(__dirname, + "public"))
 app.use(function(req, res, next) {
   if (req.method === 'GET' && req.accepts('html') && !req.is('json') && !req.path.includes('.')) {
     res.sendFile('index.html', { root })
