@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Footer from '../layout/Footer';
 import axios from 'axios';
 import { BASE_API_INFRASTRUCTURE } from '../config/url';
+import { Link } from "react-router-dom";
+import LocationCon from './LocationCon';
 
 class Home extends Component {
 	constructor(props) {
@@ -101,67 +103,82 @@ class Home extends Component {
 								<h3 className="">The most fare pricing plans ever.</h3>
 								<div className="btn-group btn-group-toggle my-3" data-toggle="buttons">
 									<label className="btn btn-round btn-outline-primary w-150">
-										<input type="radio" name="pricing" value="daily" autoComplete="off" /> Daily
+										<input type="radio" name="pricing" value="daily" autoComplete="off" /> Box
 									</label>
 									<label className="btn btn-round btn-outline-primary w-150 active">
-										<input type="radio" name="pricing" value="Monthly" autocomplete="off" checked="" /> Monthly
+										<input type="radio" name="pricing" value="Monthly" autocomplete="off" checked="" /> Room
 									</label>
 								</div>
 								<p className="lead mt-5">
 									Our prices are very easy to understand. There&apos;s not any extra or hidden fee. You just pay what is listed here.
 									<p className="small-3 fw-400">
-										<a href="/pricing">See all pricing &gt;</a>
+										<Link to="/pricing">See all pricing &gt;</Link>
 									</p>
 								</p>
 							</div>
 							<div className="col-lg-8">
 								<div className="row">
-									<div className="col-md-6 col-xl-4 mb-4">
-										<div className="product-3">
-											<a className="product-media" href="#">
-												<img className="img-responsive" src="../../src/assets/img/boxin-img/box-kecil@3x.png" />
-											</a>
-											<div className="product-detail">
-												<h6>
-													<a href="">Rp. 100.000/day</a>
-												</h6>
-												<small className="text-lighter">Small Box ( 60 x 100 cm )</small>
-												<br />
-												<a href="" className="btn btn-round btn-outline-primary w-100">Book Now</a>
-											</div>
-										</div>
-									</div>
-									<div className="col-md-6 col-xl-4 mb-4">
-										<div className="product-3">
-											<a className="product-media" href="#">
-												<img className="img-responsive" src="../../src/assets/img/boxin-img/box-kecil@3x.png" />
-											</a>
-											<div className="product-detail">
-												<h6>
-													<a href="">Rp. 100.000/day</a>
-												</h6>
-												<small className="text-lighter">Medium Box ( 100 x 120 cm )</small>
-												<br />
-												<a href="" className="btn btn-round btn-outline-primary w-100">Book Now </a>
-											</div>
-										</div>
-									</div>
-									<div className="col-md-6 col-xl-4 mb-4">
-										<div className="product-3">
-											<a className="product-media" href="#">
-												<img className="img-responsive" src="../../src/assets/img/boxin-img/box-kecil@3x.png" />
-											</a>
-											<div className="product-detail">
-												<h6>
-													<a href="">Rp. 100.000/day</a>
-												</h6>
-												<small className="text-lighter">Big Box ( 200 x 300 cm )</small>
-												<br />
-												<a href="" className="btn btn-round btn-outline-primary w-100">Book Now</a>
-											</div>
-										</div>
-									</div>
-								</div>
+					              <div className="col-md-4 col-xl-3 mb-6">
+					                <div className="">
+					                  <a className="product-media" href="#">
+					                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
+					                  </a>
+					                  <div className="product-detail mt-4">
+					                    <h6>
+					                      <a href="">Rp. 20.000/weekly</a>
+					                    </h6>
+					                    <small className="text-lighter">( 60 x 40 x 37 cm )</small>
+					                    <br />
+					                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
+					                  </div>
+					                </div>
+					              </div>
+					              <div className="col-md-4 col-xl-3 mb-6">
+					                <div className="">
+					                  <a className="product-media" href="#">
+					                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
+					                  </a>
+					                  <div className="product-detail mt-4">
+					                    <h6>
+					                      <a href="">Rp. 60.000/monthly</a>
+					                    </h6>
+					                    <small className="text-lighter">( 60 x 40 x 37 cm )</small>
+					                    <br />
+					                    <a href="" className="btn btn-round btn-outline-primary">Book Now </a>
+					                  </div>
+					                </div>
+					              </div>
+					              <div className="col-md-4 col-xl-3 mb-6">
+					                <div className="">
+					                  <a className="product-media" href="#">
+					                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
+					                  </a>
+					                  <div className="product-detail mt-4">
+					                    <h6>
+					                      <a href="">Rp. 300.000/6 months</a>
+					                    </h6>
+					                    <small className="text-lighter">( 60 x 40 x 37 cm )</small>
+					                    <br />
+					                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
+					                  </div>
+					                </div>
+					              </div>
+					              <div className="col-md-4 col-xl-3 mb-6">
+					                <div className="">
+					                  <a className="product-media" href="#">
+					                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
+					                  </a>
+					                  <div className="product-detail mt-4">
+					                    <h6>
+					                      <a href="">Rp. 550.000/annual</a>
+					                    </h6>
+					                    <small className="text-lighter">( 60 x 40 x 37 cm )</small>
+					                    <br />
+					                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
+					                  </div>
+					                </div>
+					              </div>
+					            </div>
 							</div>
 						</div>
 					</div>
@@ -179,34 +196,34 @@ class Home extends Component {
 							<div className="col-md-9">
 								<div className="row mb-3">
 									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Apakah barang saya aman bersama Boxin?</a>
+										<Link to="/faq" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Apakah barang saya aman bersama Boxin?</Link>
 									</div>
 									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila barang saya hilang?</a>
-									</div>
-								</div>
-								<div className="row mb-3">
-									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila saya lupa mengambil barang setelah masa penyimpanan berakhir?</a>
-									</div>
-									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Apakah saya perlu kesana untuk mengambil barang?</a>
+										<Link to="/faq" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila barang saya hilang?</Link>
 									</div>
 								</div>
 								<div className="row mb-3">
 									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila barang saya rusak?</a>
+										<Link to="/faq" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila saya lupa mengambil barang setelah masa penyimpanan berakhir?</Link>
 									</div>
 									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila saya lupa password akun saya?</a>
+										<Link to="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Apakah saya perlu kesana untuk mengambil barang?</Link>
 									</div>
 								</div>
 								<div className="row mb-3">
 									<div className="col-md-6 mb-3">
-										<a href="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila saya tidak ada di rumah saat barang diambil?</a>
+										<Link to="/faq" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila barang saya rusak?</Link>
+									</div>
+									<div className="col-md-6 mb-3">
+										<Link to="" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila saya lupa password akun saya?</Link>
+									</div>
+								</div>
+								<div className="row mb-3">
+									<div className="col-md-6 mb-3">
+										<Link to="/faq" className="btn btn-round btn-outline-primary text-center w-400 no-rap">Bagaimana bila saya tidak ada di rumah saat barang diambil?</Link>
 									</div>
 									<div className="col-md-6 text-center">
-										<a href="/faq"><strong>See all FAQ &gt;</strong></a>
+										<Link to="/faq"><strong>See all FAQ &gt;</strong></Link>
 									</div>
 								</div>
 							</div>
@@ -228,10 +245,10 @@ class Home extends Component {
 								</p>
 								<div class="d-flex">
 									<div className="col-md-5 mb-5 pl-0">
-										<a href=""><img className="img-scale-down" src="../../src/assets/img/app/badge-google.png" /></a>
+										<a to=""><img className="img-scale-down" src="../../src/assets/img/app/badge-google.png" /></a>
 									</div>
 									<div className="col-md-5 mb-5 pr-0">
-									<a href=""><img className="img-scale-down" src="../../src/assets/img/app/badge-apple.png" /></a>
+									<a to=""><img className="img-scale-down" src="../../src/assets/img/app/badge-apple.png" /></a>
 									</div>
 								</div>
 							</div>
@@ -246,57 +263,10 @@ class Home extends Component {
 						<div className="text-center">
 							<h2 className="mb-4">We are here!</h2>
 							<p className="lead mb-7">
-								See is your area listed for our servuice. <a href="">See all our locations &gt;</a>
+								See is your area listed for our servuice. <a to="">See all our locations &gt;</a>
 							</p>
 						</div>
-						<div className="row gap-y justify-content-md-center">
-							{
-								city.map((key) => {
-									return(
-										<div className="col-6 col-sm-2 text-c-responsive">
-											<img src="../../src/assets/img/app/pin@2x.png" /> <strong>{key.name}</strong>
-										</div>
-									)
-								})
-							}
-							
-							{/*<div className="col-6 col-sm-2 text-c-responsive">
-								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Jakarta</strong>
-								<div className="nav flex-column">
-									<a href="" className="nav-link">Jakarta Timur</a>
-									<a href="" className="nav-link">Jakarta Barat</a>
-									<a href="" className="nav-link">Jakarta Selatan</a>
-									<a href="" className="nav-link">Jakarta Utara</a>
-								</div>
-							</div>
-							<div className="col-6 col-sm-2 text-c-responsive">
-								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Bandung</strong>
-								<div className="nav flex-column">
-									<a href="" className="nav-link">Jakarta Timur</a>
-									<a href="" className="nav-link">Jakarta Barat</a>
-									<a href="" className="nav-link">Jakarta Selatan</a>
-									<a href="" className="nav-link">Jakarta Utara</a>
-								</div>
-							</div>
-							<div className="col-6 col-sm-2 text-c-responsive">
-								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Serpong</strong>
-								<div className="nav flex-column">
-									<a href="" className="nav-link">Jakarta Timur</a>
-									<a href="" className="nav-link">Jakarta Barat</a>
-									<a href="" className="nav-link">Jakarta Selatan</a>
-									<a href="" className="nav-link">Jakarta Utara</a>
-								</div>
-							</div>
-							<div className="col-6 col-sm-2 text-c-responsive">
-								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Banten</strong>
-								<div className="nav flex-column">
-									<a href="" className="nav-link">Jakarta Timur</a>
-									<a href="" className="nav-link">Jakarta Barat</a>
-									<a href="" className="nav-link">Jakarta Selatan</a>
-									<a href="" className="nav-link">Jakarta Utara</a>
-								</div>
-							</div>*/}
-						</div>
+						<LocationCon />
 					</div>
 				</section>
 				<Footer />
