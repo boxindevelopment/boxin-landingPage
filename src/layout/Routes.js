@@ -29,21 +29,18 @@ class Routes extends Component {
 			<Router>
 			<div>
 				<Header />
-				<Switch>
-            		<Route exact path="/" component={StatictHome} />
-            		<Route path="/features" component={Features} />
-            		<Route path="/pricing" component={Pricing} />
-            		<Route path="/pricing-month" component={Pricing} />
-            		{/*<Route path="/pricing" component={Pricing} />*/}
-            		<Route path="/contact" component={Contact} />
-            		<Route path="/locations" component={Locations} />
-            		<Route path="/detail-locations" component={DetailLocations} />
-					<Route path="/term-conditions" component={TermCondition} />
-					<Route path="/storage-rules" component={StorageRules} />
-					<Route path="/faq" component={Faq} />
-					<Route path="*" component={NotFound} />				
-				</Switch>
+				<Route exact="true" path="/" component={StatictHome} />
+				<Route exact="true" path="/features" component={Features} />
+				<Route exact="true" path="/pricing" component={Pricing} />
+				<Route exact="true" path="/pricing-month" component={Pricing} />
+				<Route exact="true" path="/contact" component={Contact} />
+				<Route exact="true" path="/locations" component={Locations} />
+				<Route exact="true" path="/detail-locations" component={DetailLocations} />
+				<Route exact="true" path="/term-conditions" component={TermCondition} />
+				<Route exact="true" path="/storage-rules" component={StorageRules} />
+				<Route exact="true" path="/faq" component={Faq} />
 			</div>
+			
 			</Router>
 		);
 	}

@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import Footer from '../layout/Footer';
 import SubFooter from '../layout/SubFooter';
 import LocationCon from './LocationCon';
+import { goToTop } from 'react-scrollable-anchor';
 
 class Features extends Component {
 	render() {
+		goToTop()
 		return (
 			<div>
 				<header className="header h-fullscreen">

@@ -4,9 +4,11 @@ import Footer from '../layout/Footer';
 import { Link } from "react-router-dom";
 import Map from './Map';
 import LocationCon from './LocationCon';
+import { goToTop } from 'react-scrollable-anchor';
 
 class Locations extends Component {
 	render() {
+		goToTop()
 		const location = {
 			lat: -7.268190,
 			lng: 109.491000

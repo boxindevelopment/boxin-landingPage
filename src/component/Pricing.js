@@ -4,6 +4,7 @@ import SubFooter from "../layout/SubFooter";
 import axios from "axios";
 import CurrencyFormat from "react-currency-format";
 import { BASE_API_ORDER } from "../config/url";
+import { goToTop } from 'react-scrollable-anchor';
 
 class Pricing extends Component {
   constructor(props) {
@@ -64,6 +65,7 @@ class Pricing extends Component {
   }
 
   render() {
+    goToTop()
     const { boxMonth, boxWeek, fee } = this.state;
     return (
       <div>
