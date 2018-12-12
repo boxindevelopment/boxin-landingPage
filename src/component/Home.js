@@ -245,10 +245,10 @@ class Home extends Component {
 								</p>
 								<div class="d-flex">
 									<div className="col-md-5 mb-5 pl-0">
-										<a to=""><img className="img-scale-down" src="../../src/assets/img/app/badge-google.png" /></a>
+										<a href="https://play.google.com/store/apps/details?id=com.twiscode.boxin"><img className="img-scale-down" src="../../src/assets/img/app/badge-google.png" /></a>
 									</div>
 									<div className="col-md-5 mb-5 pr-0">
-									<a to=""><img className="img-scale-down" src="../../src/assets/img/app/badge-apple.png" /></a>
+									<a href="https://play.google.com/store/apps/details?id=com.twiscode.boxin"><img className="img-scale-down" src="../../src/assets/img/app/badge-apple.png" /></a>
 									</div>
 								</div>
 							</div>
