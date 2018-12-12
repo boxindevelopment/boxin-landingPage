@@ -6,7 +6,8 @@ module.exports = {
     entry: './src/layout/index.js',
     output: {
       path: path.resolve('dist'),
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      publicPath: '/'
     },
     devtool: "source-map",
     resolveLoader: {
@@ -61,7 +62,7 @@ module.exports = {
     },
     devServer: {
       historyApiFallback: true,
-      port: 80
+      port: 8080
       // open: 'http://localhost:8080',
     },
     plugins: [new HtmlWebpackPlugin({

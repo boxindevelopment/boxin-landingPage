@@ -33,6 +33,8 @@ class Routes extends Component {
             		<Route exact path="/" component={StatictHome} />
             		<Route path="/features" component={Features} />
             		<Route path="/pricing" component={Pricing} />
+            		<Route path="/pricing-month" component={Pricing} />
+            		{/*<Route path="/pricing" component={Pricing} />*/}
             		<Route path="/contact" component={Contact} />
             		<Route path="/locations" component={Locations} />
             		<Route path="/detail-locations" component={DetailLocations} />
