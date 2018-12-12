@@ -6,6 +6,6 @@ import Favicon from 'react-favicon';
 
 ReactDOM.render(
     <div>
-        <Favicon url="./assets/img/favicon.png" />
+        <Favicon url="../../src/assets/img/favicon.ico" />
         <Routes />
     </div>, document.getElementById('root'));

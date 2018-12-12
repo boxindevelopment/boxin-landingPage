@@ -34,7 +34,7 @@
   },
   "scripts": {
     "watch": "webpack -d --watch",
-    "start": "node server.js",
+    "start": "webpack-dev-server --open",
     "clean": "rimraf dist/*",
     "build": "npm run clean && webpack --progress --bail --env dist -p",
     "test": "react-scripts test --env=jsdom",
