@@ -11,6 +11,8 @@ class Pricing extends Component {
     this.state = {
       boxMonth: [],
       boxWeek: [],
+      boxSixMonth: [],
+      boxAnnual: [],
       fee: []
     };
   }
@@ -23,6 +25,7 @@ class Pricing extends Component {
         this.setState({
           boxMonth: data
         });
+        console.log(data)
       })
       .catch(err => {
         console.log(err);
@@ -36,6 +39,34 @@ class Pricing extends Component {
         let data = res.data.data;
         this.setState({
           boxWeek: data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  boxListSixMonth() {
+    axios
+      .get(BASE_API_ORDER + "/box/list/7")
+      .then(res => {
+        let data = res.data.data;
+        this.setState({
+          boxSixMonth: data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  boxListAnnual() {
+    axios
+      .get(BASE_API_ORDER + "/box/list/8")
+      .then(res => {
+        let data = res.data.data;
+        this.setState({
+          boxAnnual: data
         });
       })
       .catch(err => {
@@ -60,11 +91,13 @@ class Pricing extends Component {
   componentDidMount() {
     this.boxListMonth();
     this.boxListWeek();
+    this.boxListSixMonth();
+    this.boxListAnnual();
     this.feeList();
   }
 
   render() {
-    const { boxMonth, boxWeek, fee } = this.state;
+    const { boxMonth, boxWeek, boxSixMonth, boxAnnual, fee } = this.state;
     return (
       <div>
         <header className="header h-fullscreen pb-6">
@@ -90,85 +123,193 @@ class Pricing extends Component {
         </header>
         <section className="section text-center bg-gray pt-6">
           <div className="container">
-            <div className="row align-items-center h-100">
-              <div className="col-lg-12">
-                <h1 className="">The most fare pricing plans ever.</h1>
-                <p className="lead">
-                  Our prices are very easy to understand. There's not any extra or hidden fee. You just pay what is listed here.
-                </p>
-                <div className="btn-group btn-group-toggle my-3 mb-8" data-toggle="buttons">
-                  <label className="btn btn-round btn-outline-primary w-150">
-                    <input type="radio" name="pricing" value="box" autoComplete="off" /> Box
-                  </label>
-                  <label className="btn btn-round btn-outline-primary w-150 active">
-                    <input type="radio" name="pricing" value="room" autoComplete="off" checked="" /> Room
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div className="row justify-content-md-center">
-              <div className="col-md-4 col-xl-3 mb-6">
-                <div className="">
-                  <a className="product-media" href="#">
-                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
-                  </a>
-                  <div className="product-detail mt-4">
-                    <h6>
-                      <a href="">Rp. 20.000/weekly</a>
-                    </h6>
-                    <small className="text-lighter">Small Box ( 60 x 40 x 37 cm )</small>
-                    <br />
-                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 col-xl-3 mb-6">
-                <div className="">
-                  <a className="product-media" href="#">
-                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
-                  </a>
-                  <div className="product-detail mt-4">
-                    <h6>
-                      <a href="">Rp. 60.000/monthly</a>
-                    </h6>
-                    <small className="text-lighter">Small Box ( 60 x 40 x 37 cm )</small>
-                    <br />
-                    <a href="" className="btn btn-round btn-outline-primary">Book Now </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 col-xl-3 mb-6">
-                <div className="">
-                  <a className="product-media" href="#">
-                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
-                  </a>
-                  <div className="product-detail mt-4">
-                    <h6>
-                      <a href="">Rp. 300.000/6 months</a>
-                    </h6>
-                    <small className="text-lighter">Small Box ( 60 x 40 x 37 cm )</small>
-                    <br />
-                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 col-xl-3 mb-6">
-                <div className="">
-                  <a className="product-media" href="#">
-                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
-                  </a>
-                  <div className="product-detail mt-4">
-                    <h6>
-                      <a href="">Rp. 550.000/annual</a>
-                    </h6>
-                    <small className="text-lighter">Small Box ( 60 x 40 x 37 cm )</small>
-                    <br />
-                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
-                  </div>
-                </div>
-              </div>
+
+            <div class="btn-group btn-group-toggle my-7 nav nav-pills d-flex justify-content-center" id="pills-tab" role="tablist">
+              <a style={{ margin: 'auto 0', borderRadius: '18px 0 0 18px', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link active" id="pills-weekly-tab" data-toggle="pill" href="#pills-weekly" role="tab" aria-controls="pills-weekly" aria-selected="true">Weekly</a>
+              <a style={{ margin: 'auto 0', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link" id="pills-month-tab" data-toggle="pill" href="#pills-month" role="tab" aria-controls="pills-month" aria-selected="false">Monthly</a>
+              <a style={{ margin: 'auto 0', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link" id="pills-sixMonth-tab" data-toggle="pill" href="#pills-sixMonth" role="tab" aria-controls="pills-sixMonth" aria-selected="false">6 Months</a>
+              <a style={{ margin: 'auto 0', borderRadius: '0 18px 18px 0', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link" id="pills-Annual-tab" data-toggle="pill" href="#pills-annual" role="tab" aria-controls="pills-annual" aria-selected="false">Annual</a>
             </div>
 
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade in show active" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab">
+                <div className="row justify-content-md-center">
+                  {boxWeek &&
+                    boxWeek.map((key, i) => {
+                      return (
+                        <div className="col-md-6 col-xl-3 mb-6">
+                          <div className="">
+                            <a className="product-media" href="#">
+                              <img
+                                className="img-responsive"
+                                src={key.types_of_size.image}
+                              />
+                            </a>
+                            <div className="product-detail mt-4">
+                              <h6>
+                                <a className="separator-sp" href="">
+                                  <CurrencyFormat
+                                    displayType={"text"}
+                                    thousandSeparator={true}
+                                    prefix={"Rp."}
+                                    value={key.price}
+                                  />
+                                  <span> / {key.type_duration.name}</span>
+                                </a>
+                              </h6>
+                              <div className="pb-3">
+                                <small className="text-lighter">
+                                  {key.types_of_size.name}
+                                </small>
+                              </div>
+                              <a
+                                href=""
+                                className="btn btn-round btn-outline-primary"
+                              >
+                                Book Now{" "}
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+
+                <div class="tab-pane fade" id="pills-month" role="tabpanel" aria-labelledby="pills-month-tab">
+                <div className="row justify-content-md-center">
+                  {boxMonth &&
+                    boxMonth.map((key, i) => {
+                      return (
+                        <div className="col-md-6 col-xl-3 mb-6">
+                          <div className="">
+                            <a className="product-media" href="#">
+                              <img
+                                className="img-responsive"
+                                src={key.types_of_size.image}
+                              />
+                            </a>
+                            <div className="product-detail mt-4">
+                              <h6>
+                                <a className="separator-sp" href="">
+                                  <CurrencyFormat
+                                    displayType={"text"}
+                                    thousandSeparator={true}
+                                    prefix={"Rp."}
+                                    value={key.price}
+                                  />
+                                  <span> / {key.type_duration.name}</span>
+                                </a>
+                              </h6>
+                              <div className="pb-3">
+                                <small className="text-lighter">
+                                  {key.types_of_size.name}
+                                </small>
+                              </div>
+                              <a
+                                href=""
+                                className="btn btn-round btn-outline-primary"
+                              >
+                                Book Now{" "}
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+                
+                <div class="tab-pane fade" id="pills-sixMonth" role="tabpanel" aria-labelledby="pills-sixMonth-tab">
+                <div className="row justify-content-md-center">
+                  {boxSixMonth &&
+                    boxSixMonth.map((key, i) => {
+                      return (
+                        <div className="col-md-6 col-xl-3 mb-6">
+                          <div className="">
+                            <a className="product-media" href="#">
+                              <img
+                                className="img-responsive"
+                                src={key.types_of_size.image}
+                              />
+                            </a>
+                            <div className="product-detail mt-4">
+                              <h6>
+                                <a className="separator-sp" href="">
+                                  <CurrencyFormat
+                                    displayType={"text"}
+                                    thousandSeparator={true}
+                                    prefix={"Rp."}
+                                    value={key.price}
+                                  />
+                                  <span> / {key.type_duration.name}</span>
+                                </a>
+                              </h6>
+                              <div className="pb-3">
+                                <small className="text-lighter">
+                                  {key.types_of_size.name}
+                                </small>
+                              </div>
+                              <a
+                                href=""
+                                className="btn btn-round btn-outline-primary"
+                              >
+                                Book Now{" "}
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+                    
+                <div class="tab-pane fade" id="pills-annual" role="tabpanel" aria-labelledby="pills-annual-tab">
+                <div className="row justify-content-md-center">
+                  {boxAnnual &&
+                    boxAnnual.map((key, i) => {
+                      return (
+                        <div className="col-md-6 col-xl-3 mb-6">
+                          <div className="">
+                            <a className="product-media" href="#">
+                              <img
+                                className="img-responsive"
+                                src={key.types_of_size.image}
+                              />
+                            </a>
+                            <div className="product-detail mt-4">
+                              <h6>
+                                <a className="separator-sp" href="">
+                                  <CurrencyFormat
+                                    displayType={"text"}
+                                    thousandSeparator={true}
+                                    prefix={"Rp."}
+                                    value={key.price}
+                                  />
+                                  <span> / {key.type_duration.name}</span>
+                                </a>
+                              </h6>
+                              <div className="pb-3">
+                                <small className="text-lighter">
+                                  {key.types_of_size.name}
+                                </small>
+                              </div>
+                              <a
+                                href=""
+                                className="btn btn-round btn-outline-primary"
+                              >
+                                Book Now{" "}
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+            </div>
             
           </div>
         </section>
