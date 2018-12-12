@@ -3,24 +3,39 @@ import Footer from "../layout/Footer";
 import SubFooter from "../layout/SubFooter";
 import axios from "axios";
 import CurrencyFormat from "react-currency-format";
-import { BASE_API } from "../config/url";
+import { BASE_API_ORDER } from "../config/url";
 
 class Pricing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      box: [],
+      boxMonth: [],
+      boxWeek: [],
       fee: []
     };
   }
 
-  boxList() {
+  boxListMonth() {
     axios
-      .get(BASE_API + "/box/list/3")
+      .get(BASE_API_ORDER + "/box/list/3")
       .then(res => {
         let data = res.data.data;
         this.setState({
-          box: data
+          boxMonth: data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  boxListWeek() {
+    axios
+      .get(BASE_API_ORDER + "/box/list/2")
+      .then(res => {
+        let data = res.data.data;
+        this.setState({
+          boxWeek: data
         });
       })
       .catch(err => {
@@ -30,7 +45,7 @@ class Pricing extends Component {
 
   feeList() {
     axios
-      .get(BASE_API + "/product/delivery-fee")
+      .get(BASE_API_ORDER + "/product/delivery-fee")
       .then(res => {
         let data = res.data.data;
         this.setState({
@@ -43,12 +58,13 @@ class Pricing extends Component {
   }
 
   componentDidMount() {
-    this.boxList();
+    this.boxListMonth();
+    this.boxListWeek();
     this.feeList();
   }
 
   render() {
-    const { box, fee } = this.state;
+    const { boxMonth, boxWeek, fee } = this.state;
     return (
       <div>
         <header className="header h-fullscreen pb-6">
@@ -78,76 +94,82 @@ class Pricing extends Component {
               <div className="col-lg-12">
                 <h1 className="">The most fare pricing plans ever.</h1>
                 <p className="lead">
-                  Our prices are very easy to understand. There's not any extra
-                  or hidden fee. You just pay what is listed here.
+                  Our prices are very easy to understand. There's not any extra or hidden fee. You just pay what is listed here.
                 </p>
-                <div
-                  className="btn-group btn-group-toggle my-3 mb-8"
-                  data-toggle="buttons"
-                >
+                <div className="btn-group btn-group-toggle my-3 mb-8" data-toggle="buttons">
                   <label className="btn btn-round btn-outline-primary w-150">
-                    <input
-                      type="radio"
-                      name="pricing"
-                      value="daily"
-                      autoComplete="off"
-                    />{" "}
-                    Daily
+                    <input type="radio" name="pricing" value="box" autoComplete="off" /> Box
                   </label>
                   <label className="btn btn-round btn-outline-primary w-150 active">
-                    <input
-                      type="radio"
-                      name="pricing"
-                      value="Monthly"
-                      autoComplete="off"
-                      checked=""
-                    />{" "}
-                    Monthly
+                    <input type="radio" name="pricing" value="room" autoComplete="off" checked="" /> Room
                   </label>
                 </div>
               </div>
             </div>
             <div className="row justify-content-md-center">
-              {box &&
-                box.map((key, i) => {
-                  return (
-                    <div className="col-md-6 col-xl-3 mb-6">
-                      <div className="">
-                        <a className="product-media" href="#">
-                          <img
-                            className="img-responsive"
-                            src={key.types_of_size.image}
-                          />
-                        </a>
-                        <div className="product-detail mt-4">
-                          <h6>
-                            <a className="separator-sp" href="">
-                              <CurrencyFormat
-                                displayType={"text"}
-                                thousandSeparator={true}
-                                prefix={"Rp."}
-                                value={key.price}
-                              />
-                              <span> / {key.type_duration.name}</span>
-                            </a>
-                          </h6>
-                          <div className="pb-3">
-                            <small className="text-lighter">
-                              {key.types_of_size.name}
-                            </small>
-                          </div>
-                          <a
-                            href=""
-                            className="btn btn-round btn-outline-primary"
-                          >
-                            Book Now{" "}
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
+              <div className="col-md-4 col-xl-3 mb-6">
+                <div className="">
+                  <a className="product-media" href="#">
+                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
+                  </a>
+                  <div className="product-detail mt-4">
+                    <h6>
+                      <a href="">Rp. 20.000/weekly</a>
+                    </h6>
+                    <small className="text-lighter">Small Box ( 60 x 40 x 37 cm )</small>
+                    <br />
+                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4 col-xl-3 mb-6">
+                <div className="">
+                  <a className="product-media" href="#">
+                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
+                  </a>
+                  <div className="product-detail mt-4">
+                    <h6>
+                      <a href="">Rp. 60.000/monthly</a>
+                    </h6>
+                    <small className="text-lighter">Small Box ( 60 x 40 x 37 cm )</small>
+                    <br />
+                    <a href="" className="btn btn-round btn-outline-primary">Book Now </a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4 col-xl-3 mb-6">
+                <div className="">
+                  <a className="product-media" href="#">
+                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
+                  </a>
+                  <div className="product-detail mt-4">
+                    <h6>
+                      <a href="">Rp. 300.000/6 months</a>
+                    </h6>
+                    <small className="text-lighter">Small Box ( 60 x 40 x 37 cm )</small>
+                    <br />
+                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4 col-xl-3 mb-6">
+                <div className="">
+                  <a className="product-media" href="#">
+                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
+                  </a>
+                  <div className="product-detail mt-4">
+                    <h6>
+                      <a href="">Rp. 550.000/annual</a>
+                    </h6>
+                    <small className="text-lighter">Small Box ( 60 x 40 x 37 cm )</small>
+                    <br />
+                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            
           </div>
         </section>
         <section className="section pb-6">
