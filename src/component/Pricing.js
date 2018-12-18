@@ -4,6 +4,7 @@ import SubFooter from "../layout/SubFooter";
 import axios from "axios";
 import CurrencyFormat from "react-currency-format";
 import { BASE_API_ORDER } from "../config/url";
+import { goToTop } from 'react-scrollable-anchor';
 
 class Pricing extends Component {
   constructor(props) {
@@ -97,6 +98,7 @@ class Pricing extends Component {
   }
 
   render() {
+    goToTop()
     const { boxMonth, boxWeek, boxSixMonth, boxAnnual, fee } = this.state;
     return (
       <div>
@@ -137,7 +139,7 @@ class Pricing extends Component {
                   {boxWeek &&
                     boxWeek.map((key, i) => {
                       return (
-                        <div className="col-md-6 col-xl-3 mb-6">
+                        <div className="col-md-6 col-xl-3">
                           <div className="">
                             <a className="product-media" href="#">
                               <img
@@ -182,7 +184,7 @@ class Pricing extends Component {
                   {boxMonth &&
                     boxMonth.map((key, i) => {
                       return (
-                        <div className="col-md-6 col-xl-3 mb-6">
+                        <div className="col-md-6 col-xl-3">
                           <div className="">
                             <a className="product-media" href="#">
                               <img
@@ -226,7 +228,7 @@ class Pricing extends Component {
                   {boxSixMonth &&
                     boxSixMonth.map((key, i) => {
                       return (
-                        <div className="col-md-6 col-xl-3 mb-6">
+                        <div className="col-md-6 col-xl-3">
                           <div className="">
                             <a className="product-media" href="#">
                               <img
@@ -270,7 +272,7 @@ class Pricing extends Component {
                   {boxAnnual &&
                     boxAnnual.map((key, i) => {
                       return (
-                        <div className="col-md-6 col-xl-3 mb-6">
+                        <div className="col-md-6 col-xl-3">
                           <div className="">
                             <a className="product-media" href="#">
                               <img

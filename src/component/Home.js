@@ -1,37 +1,69 @@
 import React, { Component } from 'react';
 import Footer from '../layout/Footer';
 import axios from 'axios';
-import { BASE_API_INFRASTRUCTURE } from '../config/url';
 import { Link } from "react-router-dom";
 import LocationCon from './LocationCon';
+import { BASE_API_ORDER } from "../config/url";
+import CurrencyFormat from "react-currency-format";
 
 class Home extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			city: []
+			boxMonth: [],
+      		boxWeek: []
 		}
 	}
 
-	cityList() {
-		axios.get(BASE_API_INFRASTRUCTURE + '/city')
-		.then((res) => {
-			let data = res.data.data
+	boxListMonth() {
+		axios
+		  .get(BASE_API_ORDER + "/box/list/3")
+		  .then(res => {
+			let data = res.data.data;
 			this.setState({
-				city: data
-			})
-		})
-		.catch((err) => {
-			console.log(err)
-		})
-	}
+			  boxMonth: data
+			});
+			console.log(data)
+		  })
+		  .catch(err => {
+			console.log(err);
+		  });
+	  }
+	
+	  boxListWeek() {
+		axios
+		  .get(BASE_API_ORDER + "/box/list/2")
+		  .then(res => {
+			let data = res.data.data;
+			this.setState({
+			  boxWeek: data
+			});
+		  })
+		  .catch(err => {
+			console.log(err);
+		  });
+	  }
 
 	componentDidMount() {
-		this.cityList()
+		this.boxListMonth()
+		this.boxListWeek()
 	}
 
 	render() {
-		let { city } = this.state
+		const { boxMonth, boxWeek } = this.state
+
+		if(!boxMonth) {
+			return (
+				'Loading...'
+			)
+		}
+
+		if(!boxWeek) {
+			return (
+				'Loading...'
+			)
+		}
+
 		return (
 			<div>
 				<header className="header h-fullscreen">
@@ -101,13 +133,9 @@ class Home extends Component {
 						<div class="row align-items-center h-100">
 							<div className="col-lg-4 text-c-responsive">
 								<h3 className="">The most fare pricing plans ever.</h3>
-								<div className="btn-group btn-group-toggle my-3" data-toggle="buttons">
-									<label className="btn btn-round btn-outline-primary w-150">
-										<input type="radio" name="pricing" value="daily" autoComplete="off" /> Box
-									</label>
-									<label className="btn btn-round btn-outline-primary w-150 active">
-										<input type="radio" name="pricing" value="Monthly" autocomplete="off" checked="" /> Room
-									</label>
+								<div class="btn-group btn-group-toggle my-7 nav nav-pills d-flex" id="pills-tab" role="tablist">
+									<a style={{ margin: 'auto 0', borderRadius: '18px 0 0 18px', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link active" id="pills-weekly-tab" data-toggle="pill" href="#pills-weekly" role="tab" aria-controls="pills-weekly" aria-selected="true">Weekly</a>
+									<a style={{ margin: 'auto 0', borderRadius: '0 18px 18px 0', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link" id="pills-month-tab" data-toggle="pill" href="#pills-month" role="tab" aria-controls="pills-month" aria-selected="false">Monthly</a>
 								</div>
 								<p className="lead mt-5">
 									Our prices are very easy to understand. There&apos;s not any extra or hidden fee. You just pay what is listed here.
@@ -117,68 +145,97 @@ class Home extends Component {
 								</p>
 							</div>
 							<div className="col-lg-8">
-								<div className="row">
-					              <div className="col-md-4 col-xl-3 mb-6">
-					                <div className="">
-					                  <a className="product-media" href="#">
-					                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
-					                  </a>
-					                  <div className="product-detail mt-4">
-					                    <h6>
-					                      <a href="">Rp. 20.000/weekly</a>
-					                    </h6>
-					                    <small className="text-lighter">( 60 x 40 x 37 cm )</small>
-					                    <br />
-					                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
-					                  </div>
-					                </div>
-					              </div>
-					              <div className="col-md-4 col-xl-3 mb-6">
-					                <div className="">
-					                  <a className="product-media" href="#">
-					                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
-					                  </a>
-					                  <div className="product-detail mt-4">
-					                    <h6>
-					                      <a href="">Rp. 60.000/monthly</a>
-					                    </h6>
-					                    <small className="text-lighter">( 60 x 40 x 37 cm )</small>
-					                    <br />
-					                    <a href="" className="btn btn-round btn-outline-primary">Book Now </a>
-					                  </div>
-					                </div>
-					              </div>
-					              <div className="col-md-4 col-xl-3 mb-6">
-					                <div className="">
-					                  <a className="product-media" href="#">
-					                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
-					                  </a>
-					                  <div className="product-detail mt-4">
-					                    <h6>
-					                      <a href="">Rp. 300.000/6 months</a>
-					                    </h6>
-					                    <small className="text-lighter">( 60 x 40 x 37 cm )</small>
-					                    <br />
-					                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
-					                  </div>
-					                </div>
-					              </div>
-					              <div className="col-md-4 col-xl-3 mb-6">
-					                <div className="">
-					                  <a className="product-media" href="#">
-					                    <img src="../../src/assets/img/boxin-img/box-kecil@2x.png" />
-					                  </a>
-					                  <div className="product-detail mt-4">
-					                    <h6>
-					                      <a href="">Rp. 550.000/annual</a>
-					                    </h6>
-					                    <small className="text-lighter">( 60 x 40 x 37 cm )</small>
-					                    <br />
-					                    <a href="" className="btn btn-round btn-outline-primary">Book Now</a>
-					                  </div>
-					                </div>
-					              </div>
-					            </div>
+								{/* <div className="row"> */}
+								<div class="tab-content" id="pills-tabContent">
+									<div class="tab-pane fade in show active" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab">
+										<div className="row">
+										{boxWeek &&
+											boxWeek.map((key, i) => {
+											return (
+												<div className="col-md-6 col-xl-4 text-center">
+												<div className="">
+													<a className="product-media" href="#">
+													<img
+														className="img-responsive"
+														src={key.types_of_size.image}
+													/>
+													</a>
+													<div className="product-detail mt-4">
+													<h6>
+														<a className="separator-sp" href="">
+														<CurrencyFormat
+															displayType={"text"}
+															thousandSeparator={true}
+															prefix={"Rp."}
+															value={key.price}
+														/>
+														<span> / {key.type_duration.name}</span>
+														</a>
+													</h6>
+													<div className="pb-3">
+														<small className="text-lighter">
+														{key.types_of_size.name}
+														</small>
+													</div>
+													<a
+														href=""
+														className="btn btn-round btn-outline-primary"
+													>
+														Book Now{" "}
+													</a>
+													</div>
+												</div>
+												</div>
+											);
+											})}
+										</div>
+									</div>
+
+
+									<div class="tab-pane fade" id="pills-month" role="tabpanel" aria-labelledby="pills-month-tab">
+										<div className="row justify-content-md-center">
+										{boxMonth &&
+											boxMonth.map((key, i) => {
+											return (
+												<div className="col-md-6 col-xl-4 text-center">
+												<div className="">
+													<a className="product-media" href="#">
+													<img
+														className="img-responsive"
+														src={key.types_of_size.image}
+													/>
+													</a>
+													<div className="product-detail mt-4">
+													<h6>
+														<a className="separator-sp" href="">
+														<CurrencyFormat
+															displayType={"text"}
+															thousandSeparator={true}
+															prefix={"Rp."}
+															value={key.price}
+														/>
+														<span> / {key.type_duration.name}</span>
+														</a>
+													</h6>
+													<div className="pb-3">
+														<small className="text-lighter">
+														{key.types_of_size.name}
+														</small>
+													</div>
+													<a
+														href=""
+														className="btn btn-round btn-outline-primary"
+													>
+														Book Now{" "}
+													</a>
+													</div>
+												</div>
+												</div>
+											);
+											})}
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
