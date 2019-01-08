@@ -5,13 +5,15 @@ import { Link } from "react-router-dom";
 import LocationCon from './LocationCon';
 import { BASE_API_ORDER } from "../config/url";
 import CurrencyFormat from "react-currency-format";
+import Loading from '../component/Loading';
 
 class Home extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			boxMonth: [],
-      		boxWeek: []
+			boxWeek: [],
+			loading: true  
 		}
 	}
 
@@ -21,7 +23,8 @@ class Home extends Component {
 		  .then(res => {
 			let data = res.data.data;
 			this.setState({
-			  boxMonth: data
+			  boxMonth: data,
+			  loading: false
 			});
 			console.log(data)
 		  })
@@ -36,7 +39,8 @@ class Home extends Component {
 		  .then(res => {
 			let data = res.data.data;
 			this.setState({
-			  boxWeek: data
+			  boxWeek: data,
+			  loading: false
 			});
 		  })
 		  .catch(err => {
@@ -50,20 +54,7 @@ class Home extends Component {
 	}
 
 	render() {
-		const { boxMonth, boxWeek } = this.state
-
-		if(!boxMonth) {
-			return (
-				'Loading...'
-			)
-		}
-
-		if(!boxWeek) {
-			return (
-				'Loading...'
-			)
-		}
-
+		const { boxMonth, boxWeek, loading } = this.state
 		return (
 			<div>
 				<header className="header h-fullscreen">
@@ -145,11 +136,10 @@ class Home extends Component {
 								</p>
 							</div>
 							<div className="col-lg-8">
-								{/* <div className="row"> */}
 								<div class="tab-content" id="pills-tabContent">
 									<div class="tab-pane fade in show active" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab">
 										<div className="row">
-										{boxWeek &&
+										{loading ? (<Loading />) :
 											boxWeek.map((key, i) => {
 											return (
 												<div className="col-md-6 col-xl-4 text-center">
@@ -194,7 +184,7 @@ class Home extends Component {
 
 									<div class="tab-pane fade" id="pills-month" role="tabpanel" aria-labelledby="pills-month-tab">
 										<div className="row justify-content-md-center">
-										{boxMonth &&
+										{loading ? (<Loading />) :
 											boxMonth.map((key, i) => {
 											return (
 												<div className="col-md-6 col-xl-4 text-center">

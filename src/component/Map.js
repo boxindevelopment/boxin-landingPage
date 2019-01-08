@@ -2,7 +2,6 @@ import React from "react"
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-
 const jkt={
 	lat:-7.249050, lng:112.751850
 };

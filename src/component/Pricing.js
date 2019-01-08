@@ -5,6 +5,8 @@ import axios from "axios";
 import CurrencyFormat from "react-currency-format";
 import { BASE_API_ORDER } from "../config/url";
 import { goToTop } from 'react-scrollable-anchor';
+import Loading from '../component/Loading';
+
 
 class Pricing extends Component {
   constructor(props) {
@@ -14,7 +16,8 @@ class Pricing extends Component {
       boxWeek: [],
       boxSixMonth: [],
       boxAnnual: [],
-      fee: []
+      fee: [],
+      loading: true
     };
   }
 
@@ -24,9 +27,9 @@ class Pricing extends Component {
       .then(res => {
         let data = res.data.data;
         this.setState({
-          boxMonth: data
+          boxMonth: data,
+          loading: false
         });
-        console.log(data)
       })
       .catch(err => {
         console.log(err);
@@ -39,7 +42,8 @@ class Pricing extends Component {
       .then(res => {
         let data = res.data.data;
         this.setState({
-          boxWeek: data
+          boxWeek: data,
+          loading: false
         });
       })
       .catch(err => {
@@ -53,7 +57,8 @@ class Pricing extends Component {
       .then(res => {
         let data = res.data.data;
         this.setState({
-          boxSixMonth: data
+          boxSixMonth: data,
+          loading: false
         });
       })
       .catch(err => {
@@ -67,7 +72,8 @@ class Pricing extends Component {
       .then(res => {
         let data = res.data.data;
         this.setState({
-          boxAnnual: data
+          boxAnnual: data,
+          loading: false
         });
       })
       .catch(err => {
@@ -99,7 +105,7 @@ class Pricing extends Component {
 
   render() {
     goToTop()
-    const { boxMonth, boxWeek, boxSixMonth, boxAnnual, fee } = this.state;
+    const { boxMonth, boxWeek, boxSixMonth, boxAnnual, fee, loading } = this.state;
     return (
       <div>
         <header className="header h-fullscreen pb-6">
@@ -136,7 +142,10 @@ class Pricing extends Component {
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade in show active" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab">
                 <div className="row justify-content-md-center">
-                  {boxWeek &&
+                  {loading ? (
+                    <div className="pt-4">
+                      <Loading />
+                    </div>) :
                     boxWeek.map((key, i) => {
                       return (
                         <div className="col-md-6 col-xl-3">
@@ -181,7 +190,10 @@ class Pricing extends Component {
 
                 <div class="tab-pane fade" id="pills-month" role="tabpanel" aria-labelledby="pills-month-tab">
                 <div className="row justify-content-md-center">
-                  {boxMonth &&
+                  {loading ? (
+                    <div className="pt-4">
+                      <Loading />
+                    </div>) :
                     boxMonth.map((key, i) => {
                       return (
                         <div className="col-md-6 col-xl-3">
@@ -225,7 +237,10 @@ class Pricing extends Component {
                 
                 <div class="tab-pane fade" id="pills-sixMonth" role="tabpanel" aria-labelledby="pills-sixMonth-tab">
                 <div className="row justify-content-md-center">
-                  {boxSixMonth &&
+                  {loading ? (
+                    <div className="pt-4">
+                      <Loading />
+                    </div>) :
                     boxSixMonth.map((key, i) => {
                       return (
                         <div className="col-md-6 col-xl-3">
@@ -269,7 +284,10 @@ class Pricing extends Component {
                     
                 <div class="tab-pane fade" id="pills-annual" role="tabpanel" aria-labelledby="pills-annual-tab">
                 <div className="row justify-content-md-center">
-                  {boxAnnual &&
+                  {loading ? (
+                    <div className="pt-4">
+                      <Loading />
+                    </div>) :
                     boxAnnual.map((key, i) => {
                       return (
                         <div className="col-md-6 col-xl-3">
