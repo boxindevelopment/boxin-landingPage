@@ -133,10 +133,10 @@ class Pricing extends Component {
           <div className="container">
 
             <div class="btn-group btn-group-toggle my-7 nav nav-pills d-flex justify-content-center" id="pills-tab" role="tablist">
-              <a style={{ margin: 'auto 0', borderRadius: '18px 0 0 18px', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link active" id="pills-weekly-tab" data-toggle="pill" href="#pills-weekly" role="tab" aria-controls="pills-weekly" aria-selected="true">Weekly</a>
-              <a style={{ margin: 'auto 0', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link" id="pills-month-tab" data-toggle="pill" href="#pills-month" role="tab" aria-controls="pills-month" aria-selected="false">Monthly</a>
-              <a style={{ margin: 'auto 0', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link" id="pills-sixMonth-tab" data-toggle="pill" href="#pills-sixMonth" role="tab" aria-controls="pills-sixMonth" aria-selected="false">6 Months</a>
-              <a style={{ margin: 'auto 0', borderRadius: '0 18px 18px 0', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link" id="pills-Annual-tab" data-toggle="pill" href="#pills-annual" role="tab" aria-controls="pills-annual" aria-selected="false">Annual</a>
+              <a className="left-content btn btn-round btn-outline-primary w-150 nav-link active" id="pills-weekly-tab" data-toggle="pill" href="#pills-weekly" role="tab" aria-controls="pills-weekly" aria-selected="true">Weekly</a>
+              <a className="center-content btn btn-round btn-outline-primary w-150 nav-link" id="pills-month-tab" data-toggle="pill" href="#pills-month" role="tab" aria-controls="pills-month" aria-selected="false">Monthly</a>
+              <a className="center-content btn btn-round btn-outline-primary w-150 nav-link" id="pills-sixMonth-tab" data-toggle="pill" href="#pills-sixMonth" role="tab" aria-controls="pills-sixMonth" aria-selected="false">6 Months</a>
+              <a className="right-content btn btn-round btn-outline-primary w-150 nav-link" id="pills-Annual-tab" data-toggle="pill" href="#pills-annual" role="tab" aria-controls="pills-annual" aria-selected="false">Annual</a>
             </div>
 
             <div class="tab-content" id="pills-tabContent">
@@ -148,7 +148,7 @@ class Pricing extends Component {
                     </div>) :
                     boxWeek.map((key, i) => {
                       return (
-                        <div className="col-md-6 col-xl-3">
+                        <div className="col-md-6 col-xl-3 mt-4 mb-4">
                           <div className="">
                             <a className="product-media" href="#">
                               <img
@@ -196,7 +196,7 @@ class Pricing extends Component {
                     </div>) :
                     boxMonth.map((key, i) => {
                       return (
-                        <div className="col-md-6 col-xl-3">
+                        <div className="col-md-6 col-xl-3 mt-4 mb-4">
                           <div className="">
                             <a className="product-media" href="#">
                               <img
@@ -243,7 +243,7 @@ class Pricing extends Component {
                     </div>) :
                     boxSixMonth.map((key, i) => {
                       return (
-                        <div className="col-md-6 col-xl-3">
+                        <div className="col-md-6 col-xl-3 mt-4 mb-4">
                           <div className="">
                             <a className="product-media" href="#">
                               <img
@@ -290,7 +290,7 @@ class Pricing extends Component {
                     </div>) :
                     boxAnnual.map((key, i) => {
                       return (
-                        <div className="col-md-6 col-xl-3">
+                        <div className="col-md-6 col-xl-3 mt-4 mb-4">
                           <div className="">
                             <a className="product-media" href="#">
                               <img

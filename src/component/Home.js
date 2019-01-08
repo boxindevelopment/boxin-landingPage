@@ -26,7 +26,6 @@ class Home extends Component {
 			  boxMonth: data,
 			  loading: false
 			});
-			console.log(data)
 		  })
 		  .catch(err => {
 			console.log(err);
@@ -122,27 +121,27 @@ class Home extends Component {
 				<section className="section bg-gray">
 					<div className="container">
 						<div class="row align-items-center h-100">
-							<div className="col-lg-4 text-c-responsive">
+							<div className="col-xl-4 text-c-responsive">
 								<h3 className="">The most fare pricing plans ever.</h3>
-								<div class="btn-group btn-group-toggle my-7 nav nav-pills d-flex" id="pills-tab" role="tablist">
-									<a style={{ margin: 'auto 0', borderRadius: '18px 0 0 18px', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link active" id="pills-weekly-tab" data-toggle="pill" href="#pills-weekly" role="tab" aria-controls="pills-weekly" aria-selected="true">Weekly</a>
-									<a style={{ margin: 'auto 0', borderRadius: '0 18px 18px 0', padding: '8px' }} class="btn btn-round btn-outline-primary w-150 nav-link" id="pills-month-tab" data-toggle="pill" href="#pills-month" role="tab" aria-controls="pills-month" aria-selected="false">Monthly</a>
+								<div class="btn-group btn-group-toggle my-7 nav nav-pills d-flex jv-content" id="pills-tab" role="tablist">
+									<a className="left-content btn btn-round btn-outline-primary w-150 nav-link active" id="pills-weekly-tab" data-toggle="pill" href="#pills-weekly" role="tab" aria-controls="pills-weekly" aria-selected="true">Weekly</a>
+									<a className="right-content btn btn-round btn-outline-primary w-150 nav-link" id="pills-month-tab" data-toggle="pill" href="#pills-month" role="tab" aria-controls="pills-month" aria-selected="false">Monthly</a>
 								</div>
-								<p className="lead mt-5">
+								<div className="lead mt-5">
 									Our prices are very easy to understand. There&apos;s not any extra or hidden fee. You just pay what is listed here.
 									<p className="small-3 fw-400">
 										<Link to="/pricing">See all pricing &gt;</Link>
 									</p>
-								</p>
+								</div>
 							</div>
-							<div className="col-lg-8">
+							<div className="col-xl-8">
 								<div class="tab-content" id="pills-tabContent">
 									<div class="tab-pane fade in show active" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab">
 										<div className="row">
 										{loading ? (<Loading />) :
 											boxWeek.map((key, i) => {
 											return (
-												<div className="col-md-6 col-xl-4 text-center">
+												<div className="col-md-6 col-xl-4 text-center mt-4 mb-4">
 												<div className="">
 													<a className="product-media" href="#">
 													<img
@@ -187,39 +186,37 @@ class Home extends Component {
 										{loading ? (<Loading />) :
 											boxMonth.map((key, i) => {
 											return (
-												<div className="col-md-6 col-xl-4 text-center">
-												<div className="">
+												<div className="col-md-6 col-xl-4 text-center mt-4 mb-4">
 													<a className="product-media" href="#">
-													<img
-														className="img-responsive"
-														src={key.types_of_size.image}
-													/>
+														<img
+															className="img-responsive"
+															src={key.types_of_size.image}
+														/>
 													</a>
 													<div className="product-detail mt-4">
-													<h6>
-														<a className="separator-sp" href="">
-														<CurrencyFormat
-															displayType={"text"}
-															thousandSeparator={true}
-															prefix={"Rp."}
-															value={key.price}
-														/>
-														<span> / {key.type_duration.name}</span>
-														</a>
-													</h6>
-													<div className="pb-3">
-														<small className="text-lighter">
-														{key.types_of_size.name}
-														</small>
-													</div>
-													<a
-														href=""
-														className="btn btn-round btn-outline-primary"
-													>
+														<h6>
+															<a className="separator-sp" href="">
+															<CurrencyFormat
+																displayType={"text"}
+																thousandSeparator={true}
+																prefix={"Rp."}
+																value={key.price}
+															/>
+															<span> / {key.type_duration.name}</span>
+															</a>
+														</h6>
+														<div className="pb-3">
+															<small className="text-lighter">
+															{key.types_of_size.name}
+															</small>
+														</div>
+														<a
+															href=""
+															className="btn btn-round btn-outline-primary"
+														>
 														Book Now{" "}
-													</a>
+														</a>
 													</div>
-												</div>
 												</div>
 											);
 											})}
