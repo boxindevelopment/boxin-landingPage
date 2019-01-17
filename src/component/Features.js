@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import Footer from '../layout/Footer';
 import SubFooter from '../layout/SubFooter';
+import LocationCon from './LocationCon';
+import { goToTop } from 'react-scrollable-anchor';
 
 class Features extends Component {
 	render() {
+		goToTop()
 		return (
 			<div>
 				<header className="header h-fullscreen">
@@ -106,32 +109,7 @@ class Features extends Component {
 								<p className="lead-2">See is your area listed for our servuice</p>
 							</div>
 						</div>
-						<div className="row gap-y text-center">
-							<div className="col-lg-3 col-xl-3">
-								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Jakarta</strong>
-								<div className="nav flex-column">
-									<small><a href="">See Map &gt;</a></small>
-								</div>
-							</div>
-							<div className="col-lg-3 col-xl-3">
-								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Bandung</strong>
-								<div className="nav flex-column">
-									<small><a href="">See Map &gt;</a></small>
-								</div>
-							</div>
-							<div className="col-lg-3 col-xl-3">
-								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Serpong</strong>
-								<div className="nav flex-column">
-									<small><a href="">See Map &gt;</a></small>
-								</div>
-							</div>
-							<div className="col-lg-3 col-xl-3">
-								<img src="../../src/assets/img/app/pin@2x.png" /> <strong>Banten</strong>
-								<div className="nav flex-column">
-									<small><a href="">See Map &gt;</a></small>
-								</div>
-							</div>
-						</div>
+						<LocationCon />
 					</div>
 				</section>
 				<SubFooter />

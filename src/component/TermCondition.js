@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Footer from '../layout/Footer';
 import SubFooter from '../layout/SubFooter';
+import { goToTop } from 'react-scrollable-anchor';
 
-class Home extends Component {
+class Term extends Component {
 	render() {
+        goToTop()
 		return (
 			<div>
                 <header className="header h-fullscreen pb-0">
@@ -162,4 +164,4 @@ class Home extends Component {
 	}
 }
 
-export default Home;
+export default Term;

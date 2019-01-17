@@ -3,7 +3,6 @@ import { Link, withRouter } from "react-router-dom";
 
 class Header extends React.Component {
 	render() {
-		console.log(this.props.history)
 		return (
 			<div>
 				<nav className="navbar navbar-expand-lg navbar-dark" data-navbar="smart">
@@ -21,7 +20,7 @@ class Header extends React.Component {
 								<Link to="/pricing" className={this.props.location.pathname == '/pricing' ? 'nav-link active' : 'nav-link '}>Pricing</Link>
 								<Link to="/contact" className={this.props.location.pathname == '/contact' ? 'nav-link active' : 'nav-link '}>Contact</Link>
 							</nav>
-							<a className="nav-link btn btn-round btn-primary">Download Now</a>
+							<a href="https://play.google.com/store/apps/details?id=com.twiscode.boxin" className="nav-link btn btn-round btn-primary">Download Now</a>
 						</section>
 					</div>
 				</nav>
