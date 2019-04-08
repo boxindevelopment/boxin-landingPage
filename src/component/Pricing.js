@@ -7,6 +7,74 @@ import { BASE_API_ORDER } from "../config/url";
 import { goToTop } from 'react-scrollable-anchor';
 import Loading from '../component/Loading';
 
+const PricingBox = ({data}) => {
+  return data.map((key, i) => {
+    return (
+      <div className="col-md-6 col-xl-3 mt-4 mb-4">
+        {
+          key.types_of_size.name==='Medium Box' || key.types_of_size.name==='Large Box' 
+          ?
+          <div className="">
+            <a className="product-media" href="#">
+              <img
+                className="img-responsive"
+                src={key.types_of_size.image}
+              />
+            </a>
+            <div className="product-detail mt-4">
+              <h6>
+                <a className="separator-sp" href="">
+                  <span>Available soon</span>
+                </a>
+              </h6>
+              <div className="pb-3">
+                <small className="text-lighter">
+                  {key.types_of_size.name}
+                </small>
+              </div>
+            </div>
+          </div>
+          :
+          <div className="">
+            <a className="product-media" href="#">
+              <img
+                className="img-responsive"
+                src={key.types_of_size.image}
+              />
+            </a>
+            <div className="product-detail mt-4">
+              <h6>
+                <a className="separator-sp" href="">
+                  <CurrencyFormat
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    prefix={"Rp."}
+                    value={key.price}
+                  />
+                  <span> / {key.type_duration.name}</span>
+                </a>
+              </h6>
+              <div className="pb-3">
+                <small className="text-lighter">
+                  {key.types_of_size.name}
+                </small>
+              </div>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.twiscode.boxin"
+                className="btn btn-round btn-outline-primary"
+              >
+                Book Now{" "}
+              </a>
+            </div>
+          </div>
+        }
+
+      </div>
+    );
+  })
+}
+
+
 
 class Pricing extends Component {
   constructor(props) {
@@ -146,44 +214,8 @@ class Pricing extends Component {
                     <div className="pt-4">
                       <Loading />
                     </div>) :
-                    boxWeek.map((key, i) => {
-                      return (
-                        <div className="col-md-6 col-xl-3 mt-4 mb-4">
-                          <div className="">
-                            <a className="product-media" href="#">
-                              <img
-                                className="img-responsive"
-                                src={key.types_of_size.image}
-                              />
-                            </a>
-                            <div className="product-detail mt-4">
-                              <h6>
-                                <a className="separator-sp" href="">
-                                  <CurrencyFormat
-                                    displayType={"text"}
-                                    thousandSeparator={true}
-                                    prefix={"Rp."}
-                                    value={key.price}
-                                  />
-                                  <span> / {key.type_duration.name}</span>
-                                </a>
-                              </h6>
-                              <div className="pb-3">
-                                <small className="text-lighter">
-                                  {key.types_of_size.name}
-                                </small>
-                              </div>
-                              <a
-                                href=""
-                                className="btn btn-round btn-outline-primary"
-                              >
-                                Book Now{" "}
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
+                    <PricingBox data={boxWeek}/>
+                  }
                   </div>
                 </div>
 
@@ -194,44 +226,8 @@ class Pricing extends Component {
                     <div className="pt-4">
                       <Loading />
                     </div>) :
-                    boxMonth.map((key, i) => {
-                      return (
-                        <div className="col-md-6 col-xl-3 mt-4 mb-4">
-                          <div className="">
-                            <a className="product-media" href="#">
-                              <img
-                                className="img-responsive"
-                                src={key.types_of_size.image}
-                              />
-                            </a>
-                            <div className="product-detail mt-4">
-                              <h6>
-                                <a className="separator-sp" href="">
-                                  <CurrencyFormat
-                                    displayType={"text"}
-                                    thousandSeparator={true}
-                                    prefix={"Rp."}
-                                    value={key.price}
-                                  />
-                                  <span> / {key.type_duration.name}</span>
-                                </a>
-                              </h6>
-                              <div className="pb-3">
-                                <small className="text-lighter">
-                                  {key.types_of_size.name}
-                                </small>
-                              </div>
-                              <a
-                                href=""
-                                className="btn btn-round btn-outline-primary"
-                              >
-                                Book Now{" "}
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
+                    <PricingBox data={boxMonth}/>
+                  }
                   </div>
                 </div>
                 
@@ -241,44 +237,8 @@ class Pricing extends Component {
                     <div className="pt-4">
                       <Loading />
                     </div>) :
-                    boxSixMonth.map((key, i) => {
-                      return (
-                        <div className="col-md-6 col-xl-3 mt-4 mb-4">
-                          <div className="">
-                            <a className="product-media" href="#">
-                              <img
-                                className="img-responsive"
-                                src={key.types_of_size.image}
-                              />
-                            </a>
-                            <div className="product-detail mt-4">
-                              <h6>
-                                <a className="separator-sp" href="">
-                                  <CurrencyFormat
-                                    displayType={"text"}
-                                    thousandSeparator={true}
-                                    prefix={"Rp."}
-                                    value={key.price}
-                                  />
-                                  <span> / {key.type_duration.name}</span>
-                                </a>
-                              </h6>
-                              <div className="pb-3">
-                                <small className="text-lighter">
-                                  {key.types_of_size.name}
-                                </small>
-                              </div>
-                              <a
-                                href=""
-                                className="btn btn-round btn-outline-primary"
-                              >
-                                Book Now{" "}
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
+                    <PricingBox data={boxSixMonth}/>
+                  }
                   </div>
                 </div>
                     
@@ -288,44 +248,8 @@ class Pricing extends Component {
                     <div className="pt-4">
                       <Loading />
                     </div>) :
-                    boxAnnual.map((key, i) => {
-                      return (
-                        <div className="col-md-6 col-xl-3 mt-4 mb-4">
-                          <div className="">
-                            <a className="product-media" href="#">
-                              <img
-                                className="img-responsive"
-                                src={key.types_of_size.image}
-                              />
-                            </a>
-                            <div className="product-detail mt-4">
-                              <h6>
-                                <a className="separator-sp" href="">
-                                  <CurrencyFormat
-                                    displayType={"text"}
-                                    thousandSeparator={true}
-                                    prefix={"Rp."}
-                                    value={key.price}
-                                  />
-                                  <span> / {key.type_duration.name}</span>
-                                </a>
-                              </h6>
-                              <div className="pb-3">
-                                <small className="text-lighter">
-                                  {key.types_of_size.name}
-                                </small>
-                              </div>
-                              <a
-                                href=""
-                                className="btn btn-round btn-outline-primary"
-                              >
-                                Book Now{" "}
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
+                    <PricingBox data={boxAnnual}/>
+                  }
                   </div>
                 </div>
 

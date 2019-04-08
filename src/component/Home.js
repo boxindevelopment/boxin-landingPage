@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import Footer from '../layout/Footer';
 import axios from 'axios';
 import { Link } from "react-router-dom";
@@ -142,58 +142,39 @@ class Home extends Component {
 											boxWeek.map((key, i) => {
 											return (
 												<div className="col-md-6 col-xl-4 text-center mt-4 mb-4">
-												<div className="">
-													<a className="product-media" href="#">
-													<img
-														className="img-responsive"
-														src={key.types_of_size.image}
-													/>
-													</a>
-													<div className="product-detail mt-4">
-													<h6>
-														<a className="separator-sp" href="">
-														<CurrencyFormat
-															displayType={"text"}
-															thousandSeparator={true}
-															prefix={"Rp."}
-															value={key.price}
-														/>
-														<span> / {key.type_duration.name}</span>
-														</a>
-													</h6>
-													<div className="pb-3">
-														<small className="text-lighter">
-														{key.types_of_size.name}
-														</small>
-													</div>
-													<a
-														href=""
-														className="btn btn-round btn-outline-primary"
-													>
-														Book Now{" "}
-													</a>
-													</div>
-												</div>
-												</div>
-											);
-											})}
-										</div>
-									</div>
-
-
-									<div class="tab-pane fade" id="pills-month" role="tabpanel" aria-labelledby="pills-month-tab">
-										<div className="row justify-content-md-center">
-										{loading ? (<Loading />) :
-											boxMonth.map((key, i) => {
-											return (
-												<div className="col-md-6 col-xl-4 text-center mt-4 mb-4">
-													<a className="product-media" href="#">
+												{
+													key.types_of_size.name==='Medium Box' || key.types_of_size.name==='Large Box' 
+													?
+													<div className="">
+														<a className="product-media" href="#">
 														<img
 															className="img-responsive"
 															src={key.types_of_size.image}
 														/>
-													</a>
-													<div className="product-detail mt-4">
+														</a>
+														<div className="product-detail mt-4">
+														<h6>
+															<a className="separator-sp" href="">
+																<span>Available soon</span>
+															</a>
+														</h6>
+														<div className="pb-3">
+															<small className="text-lighter">
+															{key.types_of_size.name}
+															</small>
+														</div>
+
+														</div>
+													</div>
+													:
+													<div className="">
+														<a className="product-media" href="#">
+														<img
+															className="img-responsive"
+															src={key.types_of_size.image}
+														/>
+														</a>
+														<div className="product-detail mt-4">
 														<h6>
 															<a className="separator-sp" href="">
 															<CurrencyFormat
@@ -211,12 +192,88 @@ class Home extends Component {
 															</small>
 														</div>
 														<a
-															href=""
+															href="https://play.google.com/store/apps/details?id=com.twiscode.boxin"
 															className="btn btn-round btn-outline-primary"
 														>
-														Book Now{" "}
+															Book Now{" "}
 														</a>
 													</div>
+												</div>
+
+												}
+									
+												</div>
+											);
+											})}
+										</div>
+									</div>
+
+
+									<div class="tab-pane fade" id="pills-month" role="tabpanel" aria-labelledby="pills-month-tab">
+										<div className="row justify-content-md-center">
+										{loading ? (<Loading />) :
+											boxMonth.map((key, i) => {
+											return (
+												<div className="col-md-6 col-xl-4 text-center mt-4 mb-4">	
+													{
+														key.types_of_size.name==='Medium Box' || key.types_of_size.name==='Large Box' 
+														?
+														<Fragment>
+															<a className="product-media" href="#">
+																<img
+																	className="img-responsive"
+																	src={key.types_of_size.image}
+																/>
+															</a>
+															<div className="product-detail mt-4">
+																<h6>
+																	<a className="separator-sp" href="">
+																		<span>Available soon</span>
+																	</a>
+																</h6>
+																<div className="pb-3">
+																	<small className="text-lighter">
+																	{key.types_of_size.name}
+																	</small>
+																</div>
+															</div>
+														</Fragment>
+
+														:
+
+														<Fragment>
+															<a className="product-media" href="#">
+																<img
+																	className="img-responsive"
+																	src={key.types_of_size.image}
+																/>
+															</a>
+															<div className="product-detail mt-4">
+																<h6>
+																	<a className="separator-sp" href="">
+																	<CurrencyFormat
+																		displayType={"text"}
+																		thousandSeparator={true}
+																		prefix={"Rp."}
+																		value={key.price}
+																	/>
+																	<span> / {key.type_duration.name}</span>
+																	</a>
+																</h6>
+																<div className="pb-3">
+																	<small className="text-lighter">
+																	{key.types_of_size.name}
+																	</small>
+																</div>
+																<a
+																	href="https://play.google.com/store/apps/details?id=com.twiscode.boxin"
+																	className="btn btn-round btn-outline-primary"
+																>
+																Book Now{" "}
+																</a>
+															</div>
+														</Fragment>
+													}
 												</div>
 											);
 											})}
