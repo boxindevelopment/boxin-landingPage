@@ -21,7 +21,7 @@ class Contact extends Component {
       if (!err) {
         const config = {
           header: {
-            "Content-Type": "application/json;charset=UTF-8",
+            "Content-Type": "multipart/form-data",
             "Access-Control-Allow-Origin": "*"
           }
         };
@@ -40,6 +40,8 @@ class Contact extends Component {
             message.error(error);
           });
       }
+
+      this.setState({ loading: false });
     });
   };
   render() {
@@ -158,6 +160,7 @@ class Contact extends Component {
                     htmlType="submit"
                     className="btn btn-lg btn-primary"
                     type="primary"
+                    loading={this.state.loading}
                   >
                     Submit
                   </Button>
