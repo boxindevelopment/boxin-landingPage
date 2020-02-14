@@ -10,6 +10,7 @@ import TermCondition from "../component/TermCondition";
 import StorageRules from "../component/StorageRules";
 import Faq from "../component/Faq";
 import Header from "./Header";
+import { initGA, logPageView } from '../../helpers/analytics';
 
 const NotFound = () => {
   return (
@@ -26,6 +27,16 @@ const NotFound = () => {
 };
 
 class Routes extends Component {
+  constructor(props) {
+    super(props);
+
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+    logPageView();
+  }
+
   render() {
     return (
       <Router>
