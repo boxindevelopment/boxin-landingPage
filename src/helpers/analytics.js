@@ -1,5 +1,5 @@
 import ReactGA from 'react-ga';
-import { TRACKING_ID } from '../configs/keys';
+import { TRACKING_ID } from '../config/keys';
 
 export const initGA = () => {
   console.log('GA init');

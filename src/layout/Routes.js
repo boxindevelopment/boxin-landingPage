@@ -10,7 +10,7 @@ import TermCondition from "../component/TermCondition";
 import StorageRules from "../component/StorageRules";
 import Faq from "../component/Faq";
 import Header from "./Header";
-import { initGA, logPageView } from '../../helpers/analytics';
+import { initGA, logPageView } from '../helpers/analytics';
 
 const NotFound = () => {
   return (
