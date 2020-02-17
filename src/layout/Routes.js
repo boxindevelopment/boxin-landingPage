@@ -10,7 +10,7 @@ import TermCondition from "../component/TermCondition";
 import StorageRules from "../component/StorageRules";
 import Faq from "../component/Faq";
 import Header from "./Header";
-import { initGA, logPageView } from '../helpers/analytics';
+import GAListener from './GAListener';
 
 const NotFound = () => {
   return (
@@ -27,20 +27,10 @@ const NotFound = () => {
 };
 
 class Routes extends Component {
-  constructor(props) {
-    super(props);
-
-    if (!window.GA_INITIALIZED) {
-      initGA();
-      window.GA_INITIALIZED = true;
-    }
-    logPageView();
-  }
-
   render() {
     return (
       <Router>
-        <div>
+        <GAListener>
           <Header />
           <Route exact path="/" component={StatictHome} />
           <Route exact path="/features" component={Features} />
@@ -52,7 +42,8 @@ class Routes extends Component {
           <Route exact path="/term-conditions" component={TermCondition} />
           <Route exact path="/storage-rules" component={StorageRules} />
           <Route exact path="/faq" component={Faq} />
-        </div>
+          <Route exact path="/*" component={NotFound} />
+        </GAListener>
       </Router>
     );
   }
