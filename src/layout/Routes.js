@@ -42,7 +42,7 @@ class Routes extends Component {
           <Route exact path="/term-conditions" component={TermCondition} />
           <Route exact path="/storage-rules" component={StorageRules} />
           <Route exact path="/faq" component={Faq} />
-          <Route exact path="/*" component={NotFound} />
+          {/* <Route exact path="/*" component={NotFound} /> */}
         </GAListener>
       </Router>
     );

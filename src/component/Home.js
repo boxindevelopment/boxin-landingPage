@@ -191,11 +191,11 @@ class Home extends Component {
                     <div className="row">
                       {loading ? (
                         <Loading />
-                      ) : (
-                        boxWeek.length > 0 &&
-                        boxWeek.map((key, i) => {
-                          return (
-                            <div className="col-md-6 col-xl-4 text-center mt-4 mb-4">
+                        ) : (
+                          boxWeek.length > 0 &&
+                          boxWeek.map((key, i) => {
+                            return (
+                              <div className="col-md-6 col-xl-4 text-center mt-4 mb-4">
                               {key.types_of_size.name === "Medium Box" ||
                               key.types_of_size.name === "Large Box" ? (
                                 <div className="">
