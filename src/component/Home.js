@@ -478,7 +478,7 @@ class Home extends Component {
               <h2 className="mb-4">We are here!</h2>
               <p className="lead mb-7">
                 See is your area listed for our servuice.{" "}
-                <a to="">See all our locations &gt;</a>
+                <a href="/locations">See all our locations &gt;</a>
               </p>
             </div>
             <LocationCon />
