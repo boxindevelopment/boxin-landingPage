@@ -13,7 +13,7 @@ class Home extends Component {
     this.state = {
       boxMonth: [],
       boxWeek: [],
-      loading: true
+      loading: true,
     };
   }
 
@@ -25,14 +25,14 @@ class Home extends Component {
   boxListMonth() {
     axios
       .get(BASE_API_ORDER + "/box/list/3")
-      .then(res => {
+      .then((res) => {
         let data = res.data.data;
         this.setState({
           boxMonth: data,
-          loading: false
+          loading: false,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -40,14 +40,14 @@ class Home extends Component {
   boxListWeek() {
     axios
       .get(BASE_API_ORDER + "/box/list/2")
-      .then(res => {
+      .then((res) => {
         let data = res.data.data;
         this.setState({
           boxWeek: data,
-          loading: false
+          loading: false,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -191,11 +191,11 @@ class Home extends Component {
                     <div className="row">
                       {loading ? (
                         <Loading />
-                        ) : (
-                          boxWeek.length > 0 &&
-                          boxWeek.map((key, i) => {
-                            return (
-                              <div className="col-md-6 col-xl-4 text-center mt-4 mb-4">
+                      ) : (
+                        boxWeek.length > 0 &&
+                        boxWeek.map((key, i) => {
+                          return (
+                            <div className="col-md-6 col-xl-4 text-center mt-4 mb-4">
                               {key.types_of_size.name === "Medium Box" ||
                               key.types_of_size.name === "Large Box" ? (
                                 <div className="">
@@ -475,8 +475,8 @@ class Home extends Component {
         <section className="section">
           <div className="container">
             <div className="text-center">
-              <h2 className="mb-4">We are here!</h2>
-              <p className="lead mb-7">
+              <h2 className="font-weight-bold mb-4">We are here!</h2>
+              <p className="lead fw-400 mb-5">
                 See is your area listed for our servuice.{" "}
                 <a href="/locations">See all our locations &gt;</a>
               </p>
