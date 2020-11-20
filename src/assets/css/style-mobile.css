@@ -1,0 +1,25 @@
+@media screen and (max-width: 667px) {
+    .left-content, .right-content {
+        border-radius: 0 !important;
+    }
+}
+
+@media screen and (min-width: 668px) {
+    .left-content {
+        border-radius: 18px 0px 0px 18px !important;
+    }
+
+    .right-content {
+        border-radius: 0px 18px 18px 0px !important;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .jv-content {
+        justify-content: center;
+    }
+
+    .text-c-responsive {
+        text-align: center;
+    }
+}
