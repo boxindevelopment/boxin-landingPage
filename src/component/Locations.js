@@ -25,11 +25,9 @@ class Locations extends Component {
         </header>
         <section className="pb-7">
           <div className="container">
-            <div className="row">
-              <div className="col-xl-12 text-center">
-                <h1 className="mb-3">Our Storage Locations</h1>
-                <p className="lead">See is your area listed for our service</p>
-              </div>
+            <div className="text-center">
+              <h1 className="mb-3">Our Storage Locations</h1>
+              <p className="lead">See is your area listed for our service</p>
             </div>
             <LocationCon />
           </div>

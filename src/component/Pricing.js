@@ -4,22 +4,19 @@ import SubFooter from "../layout/SubFooter";
 import axios from "axios";
 import CurrencyFormat from "react-currency-format";
 import { BASE_API_ORDER } from "../config/url";
-import { goToTop } from 'react-scrollable-anchor';
-import Loading from '../component/Loading';
+import { goToTop } from "react-scrollable-anchor";
+import Loading from "../component/Loading";
 
-const PricingBox = ({data}) => {
+const PricingBox = ({ data }) => {
   return data.map((key, i) => {
+    const index = i;
     return (
-      <div className="col-md-6 col-xl-3 mt-4 mb-4">
-        {
-          key.types_of_size.name==='Medium Box' || key.types_of_size.name==='Large Box' 
-          ?
-          <div className="">
+      <div className="col-md-6 col-xl-3 mt-4 mb-4" key={index}>
+        {key.types_of_size.name === "Medium Box" ||
+        key.types_of_size.name === "Large Box" ? (
+          <div>
             <a className="product-media" href="#">
-              <img
-                className="img-responsive"
-                src={key.types_of_size.image}
-              />
+              <img className="img-responsive" src={key.types_of_size.image} />
             </a>
             <div className="product-detail mt-4">
               <h6>
@@ -28,19 +25,14 @@ const PricingBox = ({data}) => {
                 </a>
               </h6>
               <div className="pb-3">
-                <small className="text-lighter">
-                  {key.types_of_size.name}
-                </small>
+                <small className="text-lighter">{key.types_of_size.name}</small>
               </div>
             </div>
           </div>
-          :
-          <div className="">
+        ) : (
+          <div>
             <a className="product-media" href="#">
-              <img
-                className="img-responsive"
-                src={key.types_of_size.image}
-              />
+              <img className="img-responsive" src={key.types_of_size.image} />
             </a>
             <div className="product-detail mt-4">
               <h6>
@@ -55,9 +47,7 @@ const PricingBox = ({data}) => {
                 </a>
               </h6>
               <div className="pb-3">
-                <small className="text-lighter">
-                  {key.types_of_size.name}
-                </small>
+                <small className="text-lighter">{key.types_of_size.name}</small>
               </div>
               <a
                 href="https://play.google.com/store/apps/details?id=com.twiscode.boxin"
@@ -67,14 +57,11 @@ const PricingBox = ({data}) => {
               </a>
             </div>
           </div>
-        }
-
+        )}
       </div>
     );
-  })
-}
-
-
+  });
+};
 
 class Pricing extends Component {
   constructor(props) {
@@ -84,22 +71,26 @@ class Pricing extends Component {
       boxWeek: [],
       boxSixMonth: [],
       boxAnnual: [],
+      roomMonth: [],
+      roomWeek: [],
+      roomSixMonth: [],
+      roomAnnual: [],
       fee: [],
-      loading: true
+      loading: true,
     };
   }
 
   boxListMonth() {
     axios
       .get(BASE_API_ORDER + "/box/list/3")
-      .then(res => {
+      .then((res) => {
         let data = res.data.data;
         this.setState({
           boxMonth: data,
-          loading: false
+          loading: false,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -107,14 +98,14 @@ class Pricing extends Component {
   boxListWeek() {
     axios
       .get(BASE_API_ORDER + "/box/list/2")
-      .then(res => {
+      .then((res) => {
         let data = res.data.data;
         this.setState({
           boxWeek: data,
-          loading: false
+          loading: false,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -122,14 +113,14 @@ class Pricing extends Component {
   boxListSixMonth() {
     axios
       .get(BASE_API_ORDER + "/box/list/7")
-      .then(res => {
+      .then((res) => {
         let data = res.data.data;
         this.setState({
           boxSixMonth: data,
-          loading: false
+          loading: false,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -137,14 +128,74 @@ class Pricing extends Component {
   boxListAnnual() {
     axios
       .get(BASE_API_ORDER + "/box/list/8")
-      .then(res => {
+      .then((res) => {
         let data = res.data.data;
         this.setState({
           boxAnnual: data,
-          loading: false
+          loading: false,
         });
       })
-      .catch(err => {
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  roomListMonth() {
+    axios
+      .get(BASE_API_ORDER + "/room/list/3")
+      .then((res) => {
+        let data = res.data.data;
+        this.setState({
+          roomMonth: data,
+          loading: false,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  roomListWeek() {
+    axios
+      .get(BASE_API_ORDER + "/room/list/2")
+      .then((res) => {
+        let data = res.data.data;
+        this.setState({
+          roomWeek: data,
+          loading: false,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  roomListSixMonth() {
+    axios
+      .get(BASE_API_ORDER + "/room/list/7")
+      .then((res) => {
+        let data = res.data.data;
+        this.setState({
+          roomSixMonth: data,
+          loading: false,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  roomListAnnual() {
+    axios
+      .get(BASE_API_ORDER + "/room/list/8")
+      .then((res) => {
+        let data = res.data.data;
+        this.setState({
+          roomAnnual: data,
+          loading: false,
+        });
+      })
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -152,13 +203,13 @@ class Pricing extends Component {
   feeList() {
     axios
       .get(BASE_API_ORDER + "/product/delivery-fee")
-      .then(res => {
+      .then((res) => {
         let data = res.data.data;
         this.setState({
-          fee: data
+          fee: data,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
@@ -168,12 +219,30 @@ class Pricing extends Component {
     this.boxListWeek();
     this.boxListSixMonth();
     this.boxListAnnual();
+    this.roomListMonth();
+    this.roomListWeek();
+    this.roomListSixMonth();
+    this.roomListAnnual();
     this.feeList();
   }
 
   render() {
-    goToTop()
-    const { boxMonth, boxWeek, boxSixMonth, boxAnnual, fee, loading } = this.state;
+    goToTop();
+    const {
+      boxMonth,
+      boxWeek,
+      boxSixMonth,
+      boxAnnual,
+      roomMonth,
+      roomWeek,
+      roomSixMonth,
+      roomAnnual,
+      fee,
+      loading,
+    } = this.state;
+
+    console.log("room", roomMonth, roomWeek, roomSixMonth, roomAnnual);
+
     return (
       <div>
         <header className="header h-fullscreen pb-6">
@@ -199,62 +268,252 @@ class Pricing extends Component {
         </header>
         <section className="section text-center bg-gray pt-6">
           <div className="container">
-
-            <div class="btn-group btn-group-toggle my-7 nav nav-pills d-flex justify-content-center" id="pills-tab" role="tablist">
-              <a className="left-content btn btn-round btn-outline-primary w-150 nav-link active" id="pills-weekly-tab" data-toggle="pill" href="#pills-weekly" role="tab" aria-controls="pills-weekly" aria-selected="true">Weekly</a>
-              <a className="center-content btn btn-round btn-outline-primary w-150 nav-link" id="pills-month-tab" data-toggle="pill" href="#pills-month" role="tab" aria-controls="pills-month" aria-selected="false">Monthly</a>
-              <a className="center-content btn btn-round btn-outline-primary w-150 nav-link" id="pills-sixMonth-tab" data-toggle="pill" href="#pills-sixMonth" role="tab" aria-controls="pills-sixMonth" aria-selected="false">6 Months</a>
-              <a className="right-content btn btn-round btn-outline-primary w-150 nav-link" id="pills-Annual-tab" data-toggle="pill" href="#pills-annual" role="tab" aria-controls="pills-annual" aria-selected="false">Annual</a>
+            <h2 className="text-center mb-0">Pricelist Room</h2>
+            <div
+              class="btn-group btn-group-toggle my-7 nav nav-pills d-flex justify-content-center"
+              id="pills-tab"
+              role="tablist"
+            >
+              <a
+                className="left-content btn btn-round btn-outline-primary w-150 nav-link active"
+                id="pills-weekly-room-tab"
+                data-toggle="pill"
+                href="#pills-weekly-room"
+                role="tab"
+                aria-controls="pills-weekly-room"
+                aria-selected="true"
+              >
+                Weekly
+              </a>
+              <a
+                className="center-content btn btn-round btn-outline-primary w-150 nav-link"
+                id="pills-month-room-tab"
+                data-toggle="pill"
+                href="#pills-month-room"
+                role="tab"
+                aria-controls="pills-month-room"
+                aria-selected="false"
+              >
+                Monthly
+              </a>
+              <a
+                className="center-content btn btn-round btn-outline-primary w-150 nav-link"
+                id="pills-sixMonth-room-tab"
+                data-toggle="pill"
+                href="#pills-sixMonth-room"
+                role="tab"
+                aria-controls="pills-sixMonth-room"
+                aria-selected="false"
+              >
+                6 Months
+              </a>
+              <a
+                className="right-content btn btn-round btn-outline-primary w-150 nav-link"
+                id="pills-annual-room-tab"
+                data-toggle="pill"
+                href="#pills-annual-room"
+                role="tab"
+                aria-controls="pills-annual-room"
+                aria-selected="false"
+              >
+                Annual
+              </a>
             </div>
 
             <div class="tab-content" id="pills-tabContent">
-              <div class="tab-pane fade in show active" id="pills-weekly" role="tabpanel" aria-labelledby="pills-weekly-tab">
+              <div
+                class="tab-pane fade in show active"
+                id="pills-weekly-room"
+                role="tabpanel"
+                aria-labelledby="pills-weekly-room-tab"
+              >
                 <div className="row justify-content-md-center">
                   {loading ? (
                     <div className="pt-4">
                       <Loading />
-                    </div>) :
-                    <PricingBox data={boxWeek}/>
-                  }
-                  </div>
+                    </div>
+                  ) : (
+                    <PricingBox data={roomWeek} />
+                  )}
                 </div>
+              </div>
 
+              <div
+                class="tab-pane fade"
+                id="pills-month-room"
+                role="tabpanel"
+                aria-labelledby="pills-month-room-tab"
+              >
+                <div className="row justify-content-md-center">
+                  {loading ? (
+                    <div className="pt-4">
+                      <Loading />
+                    </div>
+                  ) : (
+                    <PricingBox data={roomMonth} />
+                  )}
+                </div>
+              </div>
 
-                <div class="tab-pane fade" id="pills-month" role="tabpanel" aria-labelledby="pills-month-tab">
+              <div
+                class="tab-pane fade"
+                id="pills-sixMonth-room"
+                role="tabpanel"
+                aria-labelledby="pills-sixMonth-room-tab"
+              >
                 <div className="row justify-content-md-center">
                   {loading ? (
                     <div className="pt-4">
                       <Loading />
-                    </div>) :
-                    <PricingBox data={boxMonth}/>
-                  }
-                  </div>
+                    </div>
+                  ) : (
+                    <PricingBox data={roomSixMonth} />
+                  )}
                 </div>
-                
-                <div class="tab-pane fade" id="pills-sixMonth" role="tabpanel" aria-labelledby="pills-sixMonth-tab">
-                <div className="row justify-content-md-center">
-                  {loading ? (
-                    <div className="pt-4">
-                      <Loading />
-                    </div>) :
-                    <PricingBox data={boxSixMonth}/>
-                  }
-                  </div>
-                </div>
-                    
-                <div class="tab-pane fade" id="pills-annual" role="tabpanel" aria-labelledby="pills-annual-tab">
-                <div className="row justify-content-md-center">
-                  {loading ? (
-                    <div className="pt-4">
-                      <Loading />
-                    </div>) :
-                    <PricingBox data={boxAnnual}/>
-                  }
-                  </div>
-                </div>
+              </div>
 
+              <div
+                class="tab-pane fade"
+                id="pills-annual-room"
+                role="tabpanel"
+                aria-labelledby="pills-annual-room-tab"
+              >
+                <div className="row justify-content-md-center">
+                  {loading ? (
+                    <div className="pt-4">
+                      <Loading />
+                    </div>
+                  ) : (
+                    <PricingBox data={roomAnnual} />
+                  )}
+                </div>
+              </div>
             </div>
-            
+          </div>
+        </section>
+        <section className="section text-center bg-gray pt-6">
+          <div className="container">
+            <h2 className="text-center mb-0">Pricelist Box</h2>
+            <div
+              class="btn-group btn-group-toggle my-7 nav nav-pills d-flex justify-content-center"
+              id="pills-tab"
+              role="tablist"
+            >
+              <a
+                className="left-content btn btn-round btn-outline-primary w-150 nav-link active"
+                id="pills-weekly-tab"
+                data-toggle="pill"
+                href="#pills-weekly"
+                role="tab"
+                aria-controls="pills-weekly"
+                aria-selected="true"
+              >
+                Weekly
+              </a>
+              <a
+                className="center-content btn btn-round btn-outline-primary w-150 nav-link"
+                id="pills-month-tab"
+                data-toggle="pill"
+                href="#pills-month"
+                role="tab"
+                aria-controls="pills-month"
+                aria-selected="false"
+              >
+                Monthly
+              </a>
+              <a
+                className="center-content btn btn-round btn-outline-primary w-150 nav-link"
+                id="pills-sixMonth-tab"
+                data-toggle="pill"
+                href="#pills-sixMonth"
+                role="tab"
+                aria-controls="pills-sixMonth"
+                aria-selected="false"
+              >
+                6 Months
+              </a>
+              <a
+                className="right-content btn btn-round btn-outline-primary w-150 nav-link"
+                id="pills-annual-tab"
+                data-toggle="pill"
+                href="#pills-annual"
+                role="tab"
+                aria-controls="pills-annual"
+                aria-selected="false"
+              >
+                Annual
+              </a>
+            </div>
+
+            <div class="tab-content" id="pills-tabContent">
+              <div
+                class="tab-pane fade in show active"
+                id="pills-weekly"
+                role="tabpanel"
+                aria-labelledby="pills-weekly-tab"
+              >
+                <div className="row justify-content-md-center">
+                  {loading ? (
+                    <div className="pt-4">
+                      <Loading />
+                    </div>
+                  ) : (
+                    <PricingBox data={boxWeek} />
+                  )}
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="pills-month"
+                role="tabpanel"
+                aria-labelledby="pills-month-tab"
+              >
+                <div className="row justify-content-md-center">
+                  {loading ? (
+                    <div className="pt-4">
+                      <Loading />
+                    </div>
+                  ) : (
+                    <PricingBox data={boxMonth} />
+                  )}
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="pills-sixMonth"
+                role="tabpanel"
+                aria-labelledby="pills-sixMonth-tab"
+              >
+                <div className="row justify-content-md-center">
+                  {loading ? (
+                    <div className="pt-4">
+                      <Loading />
+                    </div>
+                  ) : (
+                    <PricingBox data={boxSixMonth} />
+                  )}
+                </div>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="pills-annual"
+                role="tabpanel"
+                aria-labelledby="pills-annual-tab"
+              >
+                <div className="row justify-content-md-center">
+                  {loading ? (
+                    <div className="pt-4">
+                      <Loading />
+                    </div>
+                  ) : (
+                    <PricingBox data={boxAnnual} />
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section className="section pb-6">
