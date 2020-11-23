@@ -1,25 +1,53 @@
 import React, { Component } from "react";
-import SubFooter from "../layout/SubFooter";
-import Footer from "../layout/Footer";
-import { Link } from "react-router-dom";
+import { goToTop } from "react-scrollable-anchor";
+import axios from "axios";
+import { BASE_API_INFRASTRUCTURE } from "../config/url";
 import Map from "./Map";
 import LocationCon from "./LocationCon";
-import { goToTop } from "react-scrollable-anchor";
+import Footer from "../layout/Footer";
+import SubFooter from "../layout/SubFooter";
 
 class Locations extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      area: [],
+    };
+  }
+
+  componentDidMount() {
+    this.areaList();
+  }
+
+  areaList() {
+    axios.get(BASE_API_INFRASTRUCTURE + "/area").then(
+      (res) => {
+        if (res.data.data.length > 0) {
+          const area = res.data.data.reduce((acc, data) => {
+            acc.push({
+              lat: parseFloat(data.latitude),
+              lng: parseFloat(data.longitude),
+            });
+            return acc;
+          }, []);
+          this.setState({ area });
+        }
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
   render() {
     goToTop();
-    const location = {
-      lat: -7.26819,
-      lng: 109.491,
-    };
+
     return (
       <div>
         <header className="header h-fullscreen">
           <div className="">
             <div className="col-xl-12 p-0">
-              <Map center={location} />
-              {/* <div className="h-300" data-provide="map" data-lat="-7.268190" data-lng="109.491000" data-zoom="7" data-markers="[-7.249050, 112.751850, 'Twiscode Digital Agency', '../../src/assets/img/app/pin@2x.png'], [-7.972179, 112.634870, 'Jl. Diponegoro Malang', '../../src/assets/img/app/pin@2x.png'], [-6.215393, 106.846671, 'Tebet Jkt', '../../src/assets/img/app/pin@2x.png']"></div> */}
+              <Map area={this.state.area} />
             </div>
           </div>
         </header>

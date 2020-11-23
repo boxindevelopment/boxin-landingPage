@@ -49,7 +49,6 @@ class Home extends Component {
 
   render() {
     const { area } = this.state;
-    console.log("area", area);
 
     return (
       <div className="row">
